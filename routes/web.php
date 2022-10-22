@@ -13,6 +13,8 @@ use App\Http\Controllers\BenpelController;
 use App\Http\Controllers\HistorypelanggaranController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormbimbinganController;
+use App\Http\Controllers\AkunsiswaController;
+
 
 
 
@@ -144,3 +146,12 @@ Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])
 
 //formbimbingan
 Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
+
+//Akunsiswa
+Route::get('/akunsiswa',[AkunsiswaController::class, 'index'])->name('akunsiswa');
+Route::get('/create-akunsiswa',[AkunsiswaController::class, 'create'])->name('create-akunsiswa');
+Route::post('/simpan-akunsiswa',[AkunsiswaController::class, 'store'])->name('simpan-akunsiswa');
+Route::get('/edit-akunsiswa/{id}',[AkunsiswaController::class, 'edit'])->name('edit-akunsiswa');
+Route::post('/update-akunsiswa/{id}',[AkunsiswaController::class, 'update'])->name('update-akunsiswa');
+Route::get('/delete-akunsiswa/{id}',[AkunsiswaController::class, 'destroy'])->name('delete-akunsiswa');
+
