@@ -13,20 +13,13 @@ use App\Http\Controllers\BenpelController;
 use App\Http\Controllers\HistorypelanggaranController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormbimbinganController;
-<<<<<<< HEAD
 use App\Http\Controllers\AkunsiswaController;
-
-=======
 use App\Http\Controllers\AkunguruController;
->>>>>>> akunguru
 
 
 
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
@@ -151,7 +144,6 @@ Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])
 //formbimbingan
 Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
 
-<<<<<<< HEAD
 //Akunsiswa
 Route::get('/akunsiswa',[AkunsiswaController::class, 'index'])->name('akunsiswa');
 Route::get('/create-akunsiswa',[AkunsiswaController::class, 'create'])->name('create-akunsiswa');
@@ -160,7 +152,7 @@ Route::get('/edit-akunsiswa/{id}',[AkunsiswaController::class, 'edit'])->name('e
 Route::post('/update-akunsiswa/{id}',[AkunsiswaController::class, 'update'])->name('update-akunsiswa');
 Route::get('/delete-akunsiswa/{id}',[AkunsiswaController::class, 'destroy'])->name('delete-akunsiswa');
 
-=======
+
 //akunguru
 Route::get('/akunguru',[AkunguruController::class, 'index'])->name('akunguru');
 Route::get('/create-akunguru',[AkunguruController::class, 'create'])->name('create-akunguru');
@@ -168,4 +160,3 @@ Route::post('/simpan-akunguru',[AkunguruController::class, 'store'])->name('simp
 Route::get('/edit-akunguru/{id}',[AkunguruController::class, 'edit'])->name('edit-akunguru');
 Route::post('/update-akunguru/{id}',[AkunguruController::class, 'update'])->name('update-akunguru');
 Route::get('/delete-akunguru/{id}',[AkunguruController::class, 'destroy'])->name('delete-akunguru');
->>>>>>> akunguru
