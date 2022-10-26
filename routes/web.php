@@ -13,6 +13,7 @@ use App\Http\Controllers\BenpelController;
 use App\Http\Controllers\HistorypelanggaranController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormbimbinganController;
+use App\Http\Controllers\AkunguruController;
 
 
 
@@ -144,3 +145,11 @@ Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])
 
 //formbimbingan
 Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
+
+//akunguru
+Route::get('/akunguru',[AkunguruController::class, 'index'])->name('akunguru');
+Route::get('/create-akunguru',[AkunguruController::class, 'create'])->name('create-akunguru');
+Route::post('/simpan-akunguru',[AkunguruController::class, 'store'])->name('simpan-akunguru');
+Route::get('/edit-akunguru/{id}',[AkunguruController::class, 'edit'])->name('edit-akunguru');
+Route::post('/update-akunguru/{id}',[AkunguruController::class, 'update'])->name('update-akunguru');
+Route::get('/delete-akunguru/{id}',[AkunguruController::class, 'destroy'])->name('delete-akunguru');
