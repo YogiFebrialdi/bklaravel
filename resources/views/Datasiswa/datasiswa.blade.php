@@ -46,11 +46,7 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-<<<<<<< HEAD
                     <th scope="col">@sortablelink('nisn', 'NISN')</th>
-=======
-                    <th scope="col">@sortablelink('nis', 'NIS')</th>
->>>>>>> 040f60e39440dd5e2e4c84ff5369140322f7ea73
                     <th scope="col">@sortablelink('nama', 'NAMA')</th>
                     <th scope="col">Kelas</th>
                     <th scope="col">Jenis Kelamin</th>
