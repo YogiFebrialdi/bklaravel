@@ -47,9 +47,9 @@
                 <tr>
                     <th scope="col">NO</th>
                     <th scope="col">@sortablelink('name', 'NAMA')</th>
-                    <th scope="col">Level</th>
                     <th scope="col">Email</th>
                     <th scope="col">Password</th>
+                    <th scope="col">Level</th>
                     <th scope="col">Aksi</th>
                 </tr>
                 @php
@@ -59,9 +59,9 @@
                 <tr>
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->name}}</td>
-                    <td>{{ $item->level}}</td>
                     <td>{{ $item->email}}</td>
                     <td>{{ $item->password}}</td>
+                    <td>{{ $item->level}}</td>
                     <td>
                         <a href="edit-akunguru/{{$item->id}}" class="btn btn-info">Edit</a>
                         <a href="delete-akunguru/{{$item->id}}" class="btn btn-danger">Delete</a>
