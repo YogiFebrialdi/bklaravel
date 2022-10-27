@@ -17,6 +17,7 @@ class AkunguruController extends Controller
     {
         
         $cari = $request->query('cari');
+        $guru = Akunguru::where('level', 'guru')->get();
         if(!empty($cari)){
             $data = Akunguru::sortable()
             ->where('users.name', 'like', '%'. $cari. '%')
@@ -30,6 +31,7 @@ class AkunguruController extends Controller
         return view('Akunguru.akunguru')->with([
             'data' => $data,
             'cari' => $cari,
+            'guru' => $guru,
         ]);
 
     }

@@ -55,7 +55,7 @@
                 @php
                   $no = 1 + (($data->currentPage()-1) * $data->perPage());
                 @endphp
-                @foreach ($data as $item)
+                @foreach ($guru as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->name}}</td>

@@ -16,6 +16,7 @@ class AkunsiswaController extends Controller
     public function index(Request $request)
     {
         $cari = $request->query('cari');
+        $siswa = Akunsiswa::where('level', 'siswa')->get();
         if(!empty($cari)){
             $data = Akunsiswa::sortable()
             ->where('users.name', 'like', '%'. $cari. '%')
@@ -26,6 +27,7 @@ class AkunsiswaController extends Controller
         return view('Akunsiswa.akunsiswa')->with([
             'data' => $data,
             'cari' => $cari,
+            'siswa' => $siswa,
         ]);
     }
 
