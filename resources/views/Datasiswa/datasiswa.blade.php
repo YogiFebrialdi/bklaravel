@@ -46,7 +46,7 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-                    <th scope="col">@sortablelink('nisn', 'NIM')</th>
+                    <th scope="col">@sortablelink('nisn', 'NISN')</th>
                     <th scope="col">@sortablelink('nama', 'NAMA')</th>
                     <th scope="col">Kelas</th>
                     <th scope="col">Jenis Kelamin</th>

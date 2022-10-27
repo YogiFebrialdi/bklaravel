@@ -255,7 +255,6 @@
                           <i class="nav-icon fas fa-copy"></i>
                           <p>
                             Sanksi Pelanggaran
-                            <i class="fas fa-angle-left right"></i>
                             <span class="badge badge-info right"></span>
                           </p>
                         </a>
@@ -277,7 +276,7 @@
 
                         @if (auth()->user()->level=="guru")
                         <li class="nav-item">
-                            <a href="daftarsiswa" class="nav-link">
+                            <a href="datasiswa" class="nav-link">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
                              Daftar Siswa
