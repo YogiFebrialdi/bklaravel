@@ -16,6 +16,7 @@ use App\Http\Controllers\FormbimbinganController;
 use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
 use App\Http\Controllers\SanksiguruController;
+use App\Http\Controllers\DaftarsiswaController;
 
 
 /*
