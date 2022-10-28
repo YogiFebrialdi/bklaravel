@@ -251,7 +251,7 @@
 
                       @if (auth()->user()->level=="guru")
                       <li class="nav-item">
-                        <a href="sanksi" class="nav-link">
+                        <a href="lihat-sanksi" class="nav-link">
                           <i class="nav-icon fas fa-copy"></i>
                           <p>
                             Sanksi Pelanggaran

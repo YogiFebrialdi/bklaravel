@@ -15,8 +15,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormbimbinganController;
 use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
-
-
+use App\Http\Controllers\SanksiguruController;
 
 
 /*
@@ -159,3 +158,6 @@ Route::post('/simpan-akunguru',[AkunguruController::class, 'store'])->name('simp
 Route::get('/edit-akunguru/{id}',[AkunguruController::class, 'edit'])->name('edit-akunguru');
 Route::post('/update-akunguru/{id}',[AkunguruController::class, 'update'])->name('update-akunguru');
 Route::get('/delete-akunguru/{id}',[AkunguruController::class, 'destroy'])->name('delete-akunguru');
+
+//sanksiguru
+Route::get('/lihat-sanksi',[SanksiguruController::class, 'index'])->name('lihat-sanksi');
