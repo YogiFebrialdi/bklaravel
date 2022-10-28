@@ -15,7 +15,13 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormbimbinganController;
 use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
+<<<<<<< HEAD
 use App\Http\Controllers\SanksiguruController;
+=======
+use App\Http\Controllers\DaftarsiswaController;
+
+
+>>>>>>> 0f00ef2b82e46edad2e15060e3f4830cc83a8e85
 
 
 /*
@@ -159,5 +165,10 @@ Route::get('/edit-akunguru/{id}',[AkunguruController::class, 'edit'])->name('edi
 Route::post('/update-akunguru/{id}',[AkunguruController::class, 'update'])->name('update-akunguru');
 Route::get('/delete-akunguru/{id}',[AkunguruController::class, 'destroy'])->name('delete-akunguru');
 
+<<<<<<< HEAD
 //sanksiguru
 Route::get('/lihat-sanksi',[SanksiguruController::class, 'index'])->name('lihat-sanksi');
+=======
+//Daftarsiswa
+Route::get('/daftarsiswa',[DaftarsiswaController::class, 'index'])->name('daftarsiswa');
+>>>>>>> 0f00ef2b82e46edad2e15060e3f4830cc83a8e85

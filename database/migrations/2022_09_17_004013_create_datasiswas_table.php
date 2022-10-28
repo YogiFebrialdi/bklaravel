@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('datasiswas', function (Blueprint $table) {
             $table->id();
-            $table->integer('nisn')->NULL;
+            $table->integer('nisn')->unique();
             $table->string('nama')->NULL;
             $table->string('kelas')->NULL;
             $table->enum('jk', ['Laki-Laki', 'Perempuan'])->NULL;
