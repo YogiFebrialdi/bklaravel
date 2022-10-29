@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Siswa</h1>
+            <h1 class="m-0">Input Pelanggaran</h1>
           </div><!-- /.col -->
           <!-- /.col -->
         </div><!-- /.row -->
@@ -17,9 +17,6 @@
     <div class="content">
         <div class="card card-info card-outline">
             <div class="card-header">
-            <div class="card-tools">
-                <a href="create-datasiswa" class="btn btn-success">Tambah Data Siswa <i class="fas fa-plus-square"></i></a>
-            </div>
         </div>
         @if ($message = Session:: get('success'))
             <div class="alert alert-success" role="alert">
@@ -46,14 +43,14 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-                    <th scope="col">@sortablelink('nisn', 'NISN')</th>
+                    <th scope="col">@sortablelink('nisn', 'NIS')</th>
                     <th scope="col">@sortablelink('nama', 'NAMA')</th>
                     <th scope="col">Kelas</th>
-                    <th scope="col">Jenis Kelamin</th>
+                    {{-- <th scope="col">Jenis Kelamin</th>
                     <th scope="col">Tanggal Lahir</th>
                     <th scope="col">Alamat</th>
                     <th scope="col">Walimurid</th>
-                    <th scope="col">Telepon</th>
+                    <th scope="col">Telepon</th> --}}
                     <th scope="col">Aksi</th>
                 </tr>
                 @php
@@ -65,14 +62,15 @@
                     <td>{{ $item->nisn}}</td>
                     <td>{{ $item->nama}}</td>
                     <td>{{ $item->kelas}}</td>
-                    <td>{{ $item->jk}}</td>
+                    {{-- <td>{{ $item->jk}}</td>
                     <td>{{date('d-m-Y', strtotime($item->ttl)) }}</td>
                     <td>{{ $item->alamat}}</td>
                     <td>{{ $item->walimurid}}</td>
-                    <td>{{ $item->telepon}}</td>
+                    <td>{{ $item->telepon}}</td> --}}
                     <td>
-                        <a href="edit-datasiswa/{{$item->id}}" class="btn btn-info">Edit</a>
-                        <a href="delete-datasiswa/{{$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="create-pelanggaran" class="btn btn-success">Tambah Pelanggaran <i class="fas fa-plus-square"></i></a>
+                        {{-- <a href="edit-datasiswa/{{$item->id}}" class="btn btn-info">Edit</a>
+                        <a href="delete-datasiswa/{{$item->id}}" class="btn btn-danger">Delete</a> --}}
                     </td>
                 </tr>
                 @endforeach
@@ -84,5 +82,4 @@
             </div>
         </div>
     </div>
-
   @endsection

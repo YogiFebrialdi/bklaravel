@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormbimbinganController;
 use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
+use App\Http\Controllers\InputpelanggaranController;
 
 
 
@@ -159,3 +160,8 @@ Route::post('/simpan-akunguru',[AkunguruController::class, 'store'])->name('simp
 Route::get('/edit-akunguru/{id}',[AkunguruController::class, 'edit'])->name('edit-akunguru');
 Route::post('/update-akunguru/{id}',[AkunguruController::class, 'update'])->name('update-akunguru');
 Route::get('/delete-akunguru/{id}',[AkunguruController::class, 'destroy'])->name('delete-akunguru');
+
+//inputpelanggaran
+Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->name('inputpelanggaran');
+Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
+Route::get('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');
