@@ -14,9 +14,9 @@ class Historypelanggaran extends Model
     protected $table = "historypelanggaran";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'nama', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'];
+        'id', 'nama', 'kelas', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'];
 
     public $sortable = [
-        'id', 'nama', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'
+        'id', 'nama', 'kelas', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'
     ];
 }

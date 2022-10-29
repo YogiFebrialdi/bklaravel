@@ -12,7 +12,7 @@ class HistorypelanggaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = Historypelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
         return view('historypelanggaran.historypelanggaran', compact('data'));
@@ -81,6 +81,8 @@ class HistorypelanggaranController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Historypelanggaran::findOrFail($id);
+        $data->delete();
+        return back()->with('success','Data Berhasil Di Hapus');;
     }
 }

@@ -19,6 +19,7 @@ use App\Http\Controllers\SanksiguruController;
 use App\Http\Controllers\DaftarsiswaController;
 
 
+
 /*
 |
 | Here is where you can register web routes for your application. These
@@ -140,6 +141,7 @@ Route::get('/delete-benpel/{id}',[BenpelController::class, 'destroy'])->name('de
 
 //historypelanggaran
 Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])->name('historypelanggaran');
+Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::class, 'destroy'])->name('delete-historypelanggaran');
 
 //formbimbingan
 Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
@@ -165,3 +167,4 @@ Route::get('/lihat-sanksi',[SanksiguruController::class, 'index'])->name('lihat-
 
 //Daftarsiswa
 Route::get('/daftarsiswa',[DaftarsiswaController::class, 'index'])->name('daftarsiswa');
+
