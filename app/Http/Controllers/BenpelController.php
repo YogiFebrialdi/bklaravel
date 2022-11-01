@@ -85,7 +85,7 @@ class BenpelController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $data = Benpel::findOrFail($id);
         $data->delete();
         return back()->with('success','Bentuk Pelanggaran Berhasil Di Hapus');;

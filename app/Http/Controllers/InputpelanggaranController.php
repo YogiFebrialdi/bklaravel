@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use App\Models\Inputpelanggaran;
+use App\Models\Benpel;
 use Illuminate\Http\Request;
 
 class InputpelanggaranController extends Controller
@@ -14,6 +16,7 @@ class InputpelanggaranController extends Controller
      */
     public function index(Request $request)
     {
+
 
         $cari = $request->query('cari');
         if(!empty($cari)){
@@ -40,7 +43,12 @@ class InputpelanggaranController extends Controller
      */
     public function create()
     {
-        return view('Inputpelanggaran.create-pelanggaran');
+        $kelas = Kelas::all();
+        $benpel = Benpel::all();
+        return view('Inputpelanggaran.create-pelanggaran')->with([
+            'benpel' => $benpel,
+            'kelas' => $kelas,
+        ]);;
     }
 
     /**

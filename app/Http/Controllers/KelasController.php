@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Datasiswa;
 use App\Models\Kelas;
 use Illuminate\Http\Request;
 

@@ -59,7 +59,7 @@
                 <tr>
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->kelas}}</td>
-                    <td>{{ $item->siswa}}</td>
+                    <td>{{ $item->siswa_id}}</td>
                     <td>{{ $item->pelanggaran}}</td>
                     <td>{{ $item->poin}}</td>
                     <td>

@@ -1,4 +1,4 @@
-{{-- @extends('layout.layouts')
+@extends('layout.layouts')
 
 @section('content')
 <div class="content-wrapper">
@@ -21,28 +21,37 @@
             </div>
 
         <div class="card-body">
-           <form action="simpan-inputpelanggaran" method="post">
+           <form action="simpan-historypelanggaran" method="post">
             {{ csrf_field () }}
             <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
             </div>
             <div class="form-group">
-                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
+                <select class="form-control" name="kelas" arial-label="Default control example">
+                    <option selected>Pilih Kelas</option>
+                    @foreach ($kelas as $item )
+                    <option value="{{ $item->id }}">{{ $item->kelas }}</option>
+                    @endforeach
+                </select>
             </div>
+            {{-- <div class="form-group">
+                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
+            </div> --}}
             <div class="form-group">
-                <select class="form-control" name="bentukpelanggaran" arial-label="Default control example">
+                <select class="form-control" name="benpel" arial-label="Default control example">
                     <option selected>Pilih Bentuk Pelanggaran</option>
-                    <option value="Bolos">Bolos</option>
-                    <option value="Bullying">Bullying</option>
-                    <option value="Berantem">Berantem</option>
-                    <option value="Melawanguru">Melawan Guru</option>
-                    <option value="Mencuri">Mencuri</option>
-                    <option value="Narkoba">Narkoba</option>
-                    <option value="Pakaiantidakrapih">Pakaian Tidak Rapih</option>
+                    @foreach ($benpel as $item )
+                    <option value="{{ $item->id }}">{{ $item->benpel }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
-                <input type="text" id="bobot" name="bobot" class="form-control" placeholder="Bobot">
+                <select class="form-control" name="bobot" arial-label="Default control example">
+                    <option selected>Pilih Bobot</option>
+                    @foreach ($benpel as $item )
+                    <option value="{{ $item->id }}">{{ $item->bobot }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <input type="text" id="oleh" name="oleh" class="form-control" placeholder="Oleh">
@@ -57,7 +66,4 @@
         </div>
     </div>
 
-  @endsection --}}
-
-
-  
+  @endsection
