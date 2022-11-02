@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use App\Models\Datasiswa;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,7 @@ class DatasiswaController extends Controller
         return view('Datasiswa.datasiswa')->with([
             'data' => $data,
             'cari' => $cari,
-        ]);
+            ]);
     }
 
     /**
@@ -42,7 +43,10 @@ class DatasiswaController extends Controller
      */
     public function create()
     {
-        return view('Datasiswa.create-datasiswa');
+        $kelas = Kelas::all();
+        return view('Datasiswa.create-datasiswa')->with([
+            'kelas' => $kelas,
+        ]);
     }
 
     /**
