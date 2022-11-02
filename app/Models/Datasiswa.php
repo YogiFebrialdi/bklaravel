@@ -21,4 +21,7 @@ class Datasiswa extends Model
         'id', 'nisn', 'nama', 'kelas', 'jk', 'ttl', 'alamat', 'walimurid', 'telepon'
     ];
     
+    public function kelas(){
+        return $this->belongsTo('App\Models\Kelas');
+    }
 }
