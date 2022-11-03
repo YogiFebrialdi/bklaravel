@@ -7,32 +7,30 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">History Pelanggaran Siswa</h1>
+            <h1 class="m-0">Sanksi Pelanggaran</h1>
           </div><!-- /.col -->
           <!-- /.col -->
-        </div><!-- /.row -->
+        </div><!-- /.row --> 
       </div><!-- /.container-fluid -->
     </div>
+
     <div class="content">
-      <div class="card card-info card-outline">
-          <div class="card-header">
-      </div>
+        <div class="card card-info card-outline">
+            <div class="card-header">
+        </div>
         @if ($message = Session:: get('success'))
             <div class="alert alert-success" role="alert">
               {{ $message }}
             </div>
-        @endif
+        @endif 
+
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-                    <th scope="col">@sortablelink('nama', 'NAMA')</th>
-                    <th scope="col">@sortablelink('kelas', 'KELAS')</th>
-                    <th scope="col">Bentuk Pelanggaran</th>
-                    <th scope="col">Oleh</th>
-                    <th scope="col">Tanggal Pelanggaran</th>
+                    <th scope="col">Kriteria Pelanggaran</th>
+                    <th scope="col">Keterangan</th>
                     <th scope="col">Bobot</th>
-                    <th scope="col">Aksi</th>
                 </tr>
                 @php
                   $no = 1 + (($data->currentPage()-1) * $data->perPage());
@@ -40,21 +38,13 @@
                 @foreach ($data as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
-                    <td>{{ $item->nama}}</td>
-                    <td>{{ $item->kelas}}</td>
-                    <td>{{ $item->bentukpelanggaran}}</td>
-                    <td>{{ $item->oleh}}</td>
-                    <td>{{ $item->tgl}}</td>
-                    <td>{{date('d-m-Y', strtotime($item->ttl)) }}</td>
+                    <td>{{ $item->kriteria}}</td>
+                    <td>{{ $item->keterangan}}</td>
                     <td>{{ $item->bobot}}</td>
-                    <td>{{ $item->aksi}}</td>
-                    <td>
-<<<<<<< HEAD
-                        <a href="delete/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus History Pelanggaran?');"  class="btn btn-danger">Delete</a>
-=======
-                        <a href="delete-historypelanggaran/{{$item->id}}" class="btn btn-danger">Delete</a>
->>>>>>> e4523c01082f712c9b6cc39345d3e4b33f146df2
-                    </td>
+                    {{-- <td>
+                        <a href="edit-sanksi/{{$item->id}}" class="btn btn-info">Edit</a>
+                        <a href="delete-sanksi/{{$item->id}}" class="btn btn-danger">Delete</a>
+                    </td> --}}
                 </tr>
                 @endforeach
             </table>
@@ -65,5 +55,4 @@
             </div>
         </div>
     </div>
-
   @endsection

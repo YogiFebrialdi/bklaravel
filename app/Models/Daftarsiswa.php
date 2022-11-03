@@ -6,17 +6,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 
-class Historypelanggaran extends Model
+class Daftarsiswa extends Model
 {
     use HasFactory;
     use Sortable;
 
-    protected $table = "historypelanggaran";
+    protected $table = "datasiswas";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'nama', 'kelas', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'];
+        'id', 'nisn', 'nama', 'kelas', 'jk', 'ttl', 'alamat', 'walimurid', 'telepon'];
 
     public $sortable = [
-        'id', 'nama', 'kelas', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'
+        'id', 'nisn', 'nama', 'kelas', 'jk', 'ttl', 'alamat', 'walimurid', 'telepon'
     ];
+    
 }

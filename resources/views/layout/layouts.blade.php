@@ -200,7 +200,7 @@
             @if (auth()->user()->level=="admin")
             <li class="nav-item">
                 <a href="akunguru" class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="nav-icon fas fa-users"></i>
                 <p>
                  Akun Guru
                 </p>
@@ -251,7 +251,7 @@
 
                       @if (auth()->user()->level=="guru")
                       <li class="nav-item">
-                        <a href="sanksi" class="nav-link">
+                        <a href="lihat-sanksi" class="nav-link">
                           <i class="nav-icon fas fa-copy"></i>
                           <p>
                             Sanksi Pelanggaran
@@ -276,7 +276,7 @@
 
                         @if (auth()->user()->level=="guru")
                         <li class="nav-item">
-                            <a href="datasiswa" class="nav-link">
+                            <a href="daftarsiswa" class="nav-link">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
                              Daftar Siswa

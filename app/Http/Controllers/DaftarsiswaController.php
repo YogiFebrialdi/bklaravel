@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Historypelanggaran;
+use App\Models\Daftarsiswa;
 use Illuminate\Http\Request;
 
-class HistorypelanggaranController extends Controller
+class DaftarsiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,23 @@ class HistorypelanggaranController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Historypelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
-        return view('historypelanggaran.historypelanggaran', compact('data'));
+        
+        $cari = $request->query('cari');
+        if(!empty($cari)){
+            $data = Daftarsiswa::sortable()
+            ->where('datasiswas.nisn', 'like', '%'. $cari. '%')
+            ->orWhere('datasiswas.nama', 'like', '%'. $cari. '%')
+            ->paginate(5)->fragment('daftarsiswa');
+        }else{
+            $data =  Daftarsiswa::sortable()->paginate(5)->fragment('daftarsiswa');
+        }
+
+    //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
+    //     return view('Datasiswa.datasiswa', compact('data'));
+        return view('Daftarsiswa.daftarsiswa')->with([
+            'data' => $data,
+            'cari' => $cari,
+        ]);
     }
 
     /**
@@ -81,8 +96,6 @@ class HistorypelanggaranController extends Controller
      */
     public function destroy($id)
     {
-        $data = Historypelanggaran::findOrFail($id);
-        $data->delete();
-        return back()->with('success','Data Berhasil Di Hapus');;
+        //
     }
 }

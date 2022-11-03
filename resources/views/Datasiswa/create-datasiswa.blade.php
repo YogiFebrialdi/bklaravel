@@ -24,13 +24,36 @@
            <form action="simpan-datasiswa" method="post">
             {{ csrf_field () }}
             <div class="form-group">
-                <input type="text" id="nisn" name="nisn" class="form-control" placeholder="Nisn Siswa">
+                <input type="text" id="nisn" name="nisn" class="form-control" placeholder="Nis Siswa">
             </div>
             <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
             </div>
             <div class="form-group">
-                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
+                <select class="form-control" name="kelas" arial-label="Default control example">
+                    <option selected>Pilih Kelas</option>
+                    <option value="X TKJ">X TKJ</option>
+                    <option value="XI TKJ">XI TKJ</option>
+                    <option value="XII TKJ">XII TKJ</option>
+                    <option value="X RPL">X RPL</option>
+                    <option value="XI RPL">XI RPL</option>
+                    <option value="XII RPL">XII RPL</option>
+                    <option value="X JB">X JB</option>
+                    <option value="XI JB">XI JB</option>
+                    <option value="XII JB">XII JB</option>
+                    <option value="X TAB">X TAB</option>
+                    <option value="XI TAB">XI TAB</option>
+                    <option value="XII TAB">XII TAB</option>
+                    <option value="X NKPI">X NKPI</option>
+                    <option value="XI NKPI">XI NKPI</option>
+                    <option value="XII NKPI">XII NKPI</option>
+                    <option value="X TPHP">X TPHP</option>
+                    <option value="XI TPHP">XI TPHP</option>
+                    <option value="XII TPHP">XII TPHP</option>
+                    <option value="X BP">X BP</option>
+                    <option value="XI BP">XI BP</option>
+                    <option value="XII BP">XII BP</option>
+                </select>
             </div>
             <div class="form-group">
 

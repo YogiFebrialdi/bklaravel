@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Historypelanggaran;
+use App\Models\Sanksiguru;
 use Illuminate\Http\Request;
 
-class HistorypelanggaranController extends Controller
+class SanksiguruController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class HistorypelanggaranController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Historypelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
-        return view('historypelanggaran.historypelanggaran', compact('data'));
+        $data = Sanksiguru::paginate(5)->fragment('sanksiguru');
+        return view('Sanksiguru.lihat-sanksi', compact('data'));
     }
 
     /**
@@ -81,8 +81,6 @@ class HistorypelanggaranController extends Controller
      */
     public function destroy($id)
     {
-        $data = Historypelanggaran::findOrFail($id);
-        $data->delete();
-        return back()->with('success','Data Berhasil Di Hapus');;
+        //
     }
 }
