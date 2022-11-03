@@ -26,11 +26,13 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
+                    <th scope="col">@sortablelink('nisn', 'NIS')</th>
                     <th scope="col">@sortablelink('nama', 'NAMA')</th>
+                    <th scope="col">KELAS</th>
                     <th scope="col">Bentuk Pelanggaran</th>
+                    <th scope="col">Bobot</th>
                     <th scope="col">Oleh</th>
                     <th scope="col">Tanggal Pelanggaran</th>
-                    <th scope="col">Bobot</th>
                     <th scope="col">Aksi</th>
                 </tr>
                 @php
@@ -39,15 +41,15 @@
                 @foreach ($data as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
+                    <td>{{ $item->nisn}}</td>
                     <td>{{ $item->nama}}</td>
+                    <td>{{ $item->kelas}}</td>
                     <td>{{ $item->bentukpelanggaran}}</td>
+                    <td>{{ $item->bobot}}</td>
                     <td>{{ $item->oleh}}</td>
                     <td>{{ $item->tgl}}</td>
-                    <td>{{date('d-m-Y', strtotime($item->ttl)) }}</td>
-                    <td>{{ $item->bobot}}</td>
-                    <td>{{ $item->aksi}}</td>
                     <td>
-                        <a href="delete/{{$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="delete/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus History Pelanggaran?');"  class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach
