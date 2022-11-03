@@ -72,7 +72,7 @@
                     <td>{{ $item->telepon}}</td>
                     <td>
                         <a href="edit-datasiswa/{{$item->id}}" class="btn btn-info">Edit</a>
-                        <a href="delete-datasiswa/{{$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="delete-datasiswa/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Data Siswa?');"  class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach
@@ -84,5 +84,4 @@
             </div>
         </div>
     </div>
-
   @endsection

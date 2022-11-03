@@ -43,7 +43,7 @@
                     <td>{{ $item->bobot}}</td>
                     <td>{{ $item->aksi}}</td>
                     <td>
-                        <a href="delete/{{$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="delete/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus History Pelanggaran?');"  class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach

@@ -64,7 +64,7 @@
                     <td>{{ $item->password}}</td>
                     <td>
                         <a href="edit-akunguru/{{$item->id}}" class="btn btn-info">Edit</a>
-                        <a href="delete-akunguru/{{$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="delete-akunguru/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Akun Guru?');"  class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach

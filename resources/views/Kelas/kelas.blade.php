@@ -64,7 +64,7 @@
                     <td>{{ $item->poin}}</td>
                     <td>
                         <a href="edit-kelas/{{$item->id}}" class="btn btn-info">Edit</a>
-                        <a href="delete-kelas/{{$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="delete-kelas/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Kelas?');"  class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach
