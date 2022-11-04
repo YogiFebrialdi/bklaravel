@@ -36,7 +36,8 @@ class HistorypelanggaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Inputpelanggaran::create($request->all());
+    return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
     }
 
     /**

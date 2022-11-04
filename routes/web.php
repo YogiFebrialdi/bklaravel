@@ -15,8 +15,13 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormbimbinganController;
 use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
+<<<<<<< HEAD
 use App\Http\Controllers\SanksiguruController;
 use App\Http\Controllers\DaftarsiswaController;
+=======
+use App\Http\Controllers\InputpelanggaranController;
+
+>>>>>>> inputpelanggaran
 
 
 
@@ -145,6 +150,7 @@ Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::clas
 
 //formbimbingan
 Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
+Route::post('/simpan-formbimbingan',[FormbimbinganController::class, 'store'])->name('simpan-\formbimbingan');
 
 //Akunsiswa
 Route::get('/akunsiswa',[AkunsiswaController::class, 'index'])->name('akunsiswa');
@@ -162,9 +168,16 @@ Route::get('/edit-akunguru/{id}',[AkunguruController::class, 'edit'])->name('edi
 Route::post('/update-akunguru/{id}',[AkunguruController::class, 'update'])->name('update-akunguru');
 Route::get('/delete-akunguru/{id}',[AkunguruController::class, 'destroy'])->name('delete-akunguru');
 
+<<<<<<< HEAD
 //sanksiguru
 Route::get('/lihat-sanksi',[SanksiguruController::class, 'index'])->name('lihat-sanksi');
 
 //Daftarsiswa
 Route::get('/daftarsiswa',[DaftarsiswaController::class, 'index'])->name('daftarsiswa');
 
+=======
+//inputpelanggaran
+Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->name('inputpelanggaran');
+Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
+Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');
+>>>>>>> inputpelanggaran

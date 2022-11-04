@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Datasiswa;
 use App\Models\Kelas;
+use App\Models\Inputpelanggaran;
+use App\Models\Benpel;
 use Illuminate\Http\Request;
 
-class KelasController extends Controller
+class InputpelanggaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +17,20 @@ class KelasController extends Controller
     public function index(Request $request)
     {
 
+
         $cari = $request->query('cari');
         if(!empty($cari)){
-            $data = Kelas::sortable()
-            ->where('kelas.kelas', 'like', '%'. $cari. '%')
-            ->paginate(14)->fragment('kelas');
+            $data = Inputpelanggaran::sortable()
+            ->where('datasiswas.nisn', 'like', '%'. $cari. '%')
+            ->orWhere('datasiswas.nama', 'like', '%'. $cari. '%')
+            ->paginate(5)->fragment('inputpelanggaran');
         }else{
-            $data =  Kelas::sortable()->paginate(14)->fragment('kelas');
+            $data =  Inputpelanggaran::sortable()->paginate(5)->fragment('inputpelanggaran');
         }
 
-    //    $data = Kelas::sortable()->paginate(5)->fragment('kelas');
-    //     return view('Kelas.kelas', compact('data'));
-        return view('Kelas.kelas')->with([
+    //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
+    //     return view('Datasiswa.datasiswa', compact('data'));
+        return view('Inputpelanggaran.inputpelanggaran')->with([
             'data' => $data,
             'cari' => $cari,
         ]);
@@ -40,7 +43,12 @@ class KelasController extends Controller
      */
     public function create()
     {
-        return view('Kelas.create-kelas');
+        $kelas = Kelas::all();
+        $benpel = Benpel::all();
+        return view('Inputpelanggaran.create-pelanggaran')->with([
+            'benpel' => $benpel,
+            'kelas' => $kelas,
+        ]);;
     }
 
     /**
@@ -52,13 +60,19 @@ class KelasController extends Controller
     public function store(Request $request)
     {
        //dd(request->all());
-    //    kelas::create([
-    //     'kelas' => $request->kelas,
+    //    datasiswa::create([
+    //     'nisn' => $request->nisn,
+    //     'nama' => $request->nama,
+    //     'jk' => $request->jk,
+    //     'ttl' => $request->ttl,
+    //     'alamat' => $request->alamat,
+    //     'walimurid' => $request->walimurid,
+    //     'telepon' => $request->telepon,
     //    ]);
-    Kelas::create($request->all());
-    return redirect()->route('kelas')->with('success','Kelas Berhasil Ditambahkan');
+    Inputpelanggaran::create($request->all());
+    return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
 
-       //return redirect('kelas');
+       //return redirect('datasiswa');
     }
 
     /**
@@ -80,8 +94,8 @@ class KelasController extends Controller
      */
     public function edit($id)
     {
-        $data = Kelas::findOrFail($id);
-        return view('Kelas.edit-kelas', compact('data'));
+        $data = Inputpelanggaran::findOrFail($id);
+        return view('Inputpelanggaran.edit-pelanggaran', compact('data'));
     }
 
     /**
@@ -93,9 +107,9 @@ class KelasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Kelas::findOrFail($id);
+        $data = Inputpelanggaran::findOrFail($id);
         $data->update($request->all());
-        return redirect()->route('kelas')->with('success','Data Berhasil Di Update');
+        return redirect()->route('historypelanggaran')->with('success','Data Berhasil Di Update');
     }
 
     /**
@@ -106,7 +120,7 @@ class KelasController extends Controller
      */
     public function destroy($id)
     {
-        $data = Kelas::findOrFail($id);
+        $data = Datasiswa::findOrFail($id);
         $data->delete();
         return back()->with('success','Data Berhasil Di Hapus');;
     }

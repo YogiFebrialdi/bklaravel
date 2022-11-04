@@ -35,7 +35,7 @@
           </label>
           <div class="col-sm-10">
             <input type="text" name="cari" id="cari" class="form-control" placeholder="cari data berdasarkan nama/nim"
-             autofocus="true" value="{{ $cari}}">
+            autofocus="true" value="{{ $cari}}">
           </div>
         </div>
       </form>
