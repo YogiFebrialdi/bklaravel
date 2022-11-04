@@ -34,9 +34,6 @@
                     @endforeach
                 </select>
             </div>
-            {{-- <div class="form-group">
-                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
-            </div> --}}
             <div class="form-group">
                 <select class="form-control" name="benpel" arial-label="Default control example">
                     <option selected>Pilih Bentuk Pelanggaran</option>

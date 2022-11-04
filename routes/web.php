@@ -144,6 +144,7 @@ Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])
 
 //formbimbingan
 Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
+Route::post('/simpan-formbimbingan',[FormbimbinganController::class, 'store'])->name('simpan-\formbimbingan');
 
 //Akunsiswa
 Route::get('/akunsiswa',[AkunsiswaController::class, 'index'])->name('akunsiswa');
@@ -164,4 +165,4 @@ Route::get('/delete-akunguru/{id}',[AkunguruController::class, 'destroy'])->name
 //inputpelanggaran
 Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->name('inputpelanggaran');
 Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
-Route::get('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');
+Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');
