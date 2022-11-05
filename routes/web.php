@@ -142,6 +142,7 @@ Route::get('/delete-benpel/{id}',[BenpelController::class, 'destroy'])->name('de
 
 //historypelanggaran
 Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])->name('historypelanggaran');
+Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::class, 'destroy'])->name('delete-historypelanggaran');
 
 //formbimbingan
 Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');

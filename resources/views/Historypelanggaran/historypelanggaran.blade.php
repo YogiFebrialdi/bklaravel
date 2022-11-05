@@ -49,7 +49,7 @@
                     <td>{{ $item->oleh}}</td>
                     <td>{{ $item->tgl}}</td>
                     <td>
-                        <a href="delete/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus History Pelanggaran?');"  class="btn btn-danger">Delete</a>
+                        <a href="delete-historypelanggaran/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Data Siswa?');"  class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach
@@ -63,3 +63,5 @@
     </div>
 
   @endsection
+
+

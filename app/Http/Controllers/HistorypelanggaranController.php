@@ -83,7 +83,7 @@ class HistorypelanggaranController extends Controller
      */
     public function destroy($id)
     {
-        $data = Historypelanggaran::findOrFail($id);
+        $data = Inputpelanggaran::findOrFail($id);
         $data->delete();
         return back()->with('success','Data Berhasil Di Hapus');;
     }
