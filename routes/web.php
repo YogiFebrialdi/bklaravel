@@ -17,6 +17,7 @@ use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
 use App\Http\Controllers\SanksiguruController;
 use App\Http\Controllers\DaftarsiswaController;
+use App\Http\Controllers\SanksisiswaController;
 
 
 
@@ -167,4 +168,5 @@ Route::get('/lihat-sanksi',[SanksiguruController::class, 'index'])->name('lihat-
 
 //Daftarsiswa
 Route::get('/daftarsiswa',[DaftarsiswaController::class, 'index'])->name('daftarsiswa');
-
+//sanksisiswa
+Route::get('/sanksi-siswa',[SanksiguruController::class, 'index'])->name('sanksi-siswa');
