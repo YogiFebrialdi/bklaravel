@@ -14,15 +14,9 @@
       </div><!-- /.container-fluid -->
     </div>
     <div class="content">
-<<<<<<< HEAD
       <div class="card card-info card-outline">
           <div class="card-header">
       </div>
-=======
-        <div class="card card-info card-outline">
-            <div class="card-header">
-        </div>
->>>>>>> inputpelanggaran
         @if ($message = Session:: get('success'))
             <div class="alert alert-success" role="alert">
               {{ $message }}
@@ -54,14 +48,8 @@
                     <td>{{ $item->bobot}}</td>
                     <td>{{ $item->oleh}}</td>
                     <td>{{ $item->tgl}}</td>
-                    <td>{{date('d-m-Y', strtotime($item->ttl)) }}</td>
-                    <td>{{ $item->aksi}}</td>
                     <td>
-<<<<<<< HEAD
                         <a href="delete/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus History Pelanggaran?');"  class="btn btn-danger">Delete</a>
-=======
-                        <a href="delete-historypelanggaran/{{$item->id}}" class="btn btn-danger">Delete</a>
->>>>>>> e4523c01082f712c9b6cc39345d3e4b33f146df2
                     </td>
                 </tr>
                 @endforeach
