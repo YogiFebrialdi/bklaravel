@@ -18,6 +18,7 @@ use App\Http\Controllers\AkunguruController;
 use App\Http\Controllers\SanksiguruController;
 use App\Http\Controllers\DaftarsiswaController;
 use App\Http\Controllers\SanksisiswaController;
+use App\Http\Controllers\InputpelanggaranController;
 
 
 
@@ -168,5 +169,12 @@ Route::get('/lihat-sanksi',[SanksiguruController::class, 'index'])->name('lihat-
 
 //Daftarsiswa
 Route::get('/daftarsiswa',[DaftarsiswaController::class, 'index'])->name('daftarsiswa');
+
 //sanksisiswa
 Route::get('/sanksi-siswa',[SanksiguruController::class, 'index'])->name('sanksi-siswa');
+
+
+//inputpelanggaran
+Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->name('inputpelanggaran');
+Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
+Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');

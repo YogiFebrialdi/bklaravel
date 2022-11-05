@@ -46,7 +46,7 @@
                     <td>{{ $item->benpel}}</td>
                     <td>
                         <a href="edit-kategori/{{$item->id}}" class="btn btn-info">Edit</a>
-                        <a href="delete-kategori/{{$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="delete-kategori/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Kategori?');"  class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach

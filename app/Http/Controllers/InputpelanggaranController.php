@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelas;
-use App\Models\Datasiswa;
+use App\Models\Inputpelanggaran;
+use App\Models\Benpel;
+use App\Models\Historypelanggaran;
 use Illuminate\Http\Request;
 
-
-
-class DatasiswaController extends Controller
+class InputpelanggaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,22 +18,23 @@ class DatasiswaController extends Controller
     public function index(Request $request)
     {
 
+
         $cari = $request->query('cari');
         if(!empty($cari)){
-            $data = Datasiswa::sortable()
+            $data = Inputpelanggaran::sortable()
             ->where('datasiswas.nisn', 'like', '%'. $cari. '%')
             ->orWhere('datasiswas.nama', 'like', '%'. $cari. '%')
-            ->paginate(5)->fragment('datasiswa');
+            ->paginate(5)->fragment('inputpelanggaran');
         }else{
-            $data =  Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
+            $data =  Inputpelanggaran::sortable()->paginate(5)->fragment('inputpelanggaran');
         }
 
     //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
     //     return view('Datasiswa.datasiswa', compact('data'));
-        return view('Datasiswa.datasiswa')->with([
+        return view('Inputpelanggaran.inputpelanggaran')->with([
             'data' => $data,
             'cari' => $cari,
-            ]);
+        ]);
     }
 
     /**
@@ -44,9 +45,11 @@ class DatasiswaController extends Controller
     public function create()
     {
         $kelas = Kelas::all();
-        return view('Datasiswa.create-datasiswa')->with([
+        $benpel = Benpel::all();
+        return view('Inputpelanggaran.create-pelanggaran')->with([
+            'benpel' => $benpel,
             'kelas' => $kelas,
-        ]);
+        ]);;
     }
 
     /**
@@ -67,8 +70,8 @@ class DatasiswaController extends Controller
     //     'walimurid' => $request->walimurid,
     //     'telepon' => $request->telepon,
     //    ]);
-    Datasiswa::create($request->all());
-    return redirect()->route('datasiswa')->with('success','Data Berhasil Ditambahkan');
+    Inputpelanggaran::create($request->all());
+    return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
 
        //return redirect('datasiswa');
     }
@@ -92,8 +95,8 @@ class DatasiswaController extends Controller
      */
     public function edit($id)
     {
-        $data = Datasiswa::findOrFail($id);
-        return view('Datasiswa.edit-datasiswa', compact('data'));
+        $data = Inputpelanggaran::findOrFail($id);
+        return view('Inputpelanggaran.edit-pelanggaran', compact('data'));
     }
 
     /**
@@ -105,9 +108,9 @@ class DatasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Datasiswa::findOrFail($id);
+        $data = Inputpelanggaran::findOrFail($id);
         $data->update($request->all());
-        return redirect()->route('datasiswa')->with('success','Data Berhasil Di Update');
+        return redirect()->route('historypelanggaran')->with('success','Data Berhasil Di Update');
     }
 
     /**

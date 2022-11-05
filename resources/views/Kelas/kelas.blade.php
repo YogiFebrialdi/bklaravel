@@ -59,12 +59,12 @@
                 <tr>
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->kelas}}</td>
-                    <td>{{ $item->siswa}}</td>
+                    <td>{{ $item->siswa_id}}</td>
                     <td>{{ $item->pelanggaran}}</td>
                     <td>{{ $item->poin}}</td>
                     <td>
                         <a href="edit-kelas/{{$item->id}}" class="btn btn-info">Edit</a>
-                        <a href="delete-kelas/{{$item->id}}" class="btn btn-danger">Delete</a>
+                        <a href="delete-kelas/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Kelas?');"  class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inputpelanggaran;
 use App\Models\Historypelanggaran;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class HistorypelanggaranController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Historypelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
+        $data = Inputpelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
         return view('historypelanggaran.historypelanggaran', compact('data'));
     }
 
@@ -36,7 +37,8 @@ class HistorypelanggaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Inputpelanggaran::create($request->all());
+    return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
     }
 
     /**
@@ -81,7 +83,7 @@ class HistorypelanggaranController extends Controller
      */
     public function destroy($id)
     {
-        $data = Historypelanggaran::findOrFail($id);
+        $data = Inputpelanggaran::findOrFail($id);
         $data->delete();
         return back()->with('success','Data Berhasil Di Hapus');;
     }
