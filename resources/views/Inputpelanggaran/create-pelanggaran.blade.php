@@ -21,7 +21,7 @@
             </div>
 
         <div class="card-body">
-           <form action="simpan-historypelanggaran" method="post">
+           <form action="simpan-pelanggaran" method="post">
             {{ csrf_field () }}
             <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
@@ -34,6 +34,9 @@
                     @endforeach
                 </select>
             </div>
+            {{-- <div class="form-group">
+                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
+            </div> --}}
             <div class="form-group">
                 <select class="form-control" name="benpel" arial-label="Default control example">
                     <option selected>Pilih Bentuk Pelanggaran</option>

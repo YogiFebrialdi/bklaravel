@@ -13,6 +13,10 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
+    <div class="content">
+        <div class="card card-info card-outline">
+            <div class="card-header">
+        </div>
         @if ($message = Session:: get('success'))
             <div class="alert alert-success" role="alert">
               {{ $message }}
@@ -22,12 +26,13 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
+                    <th scope="col">@sortablelink('nisn', 'NIS')</th>
                     <th scope="col">@sortablelink('nama', 'NAMA')</th>
-                    <th scope="col">@sortablelink('kelas', 'KELAS')</th>
+                    <th scope="col">KELAS</th>
                     <th scope="col">Bentuk Pelanggaran</th>
+                    <th scope="col">Bobot</th>
                     <th scope="col">Oleh</th>
                     <th scope="col">Tanggal Pelanggaran</th>
-                    <th scope="col">Bobot</th>
                     <th scope="col">Aksi</th>
                 </tr>
                 @php
@@ -36,13 +41,14 @@
                 @foreach ($data as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
+                    <td>{{ $item->nisn}}</td>
                     <td>{{ $item->nama}}</td>
                     <td>{{ $item->kelas}}</td>
                     <td>{{ $item->bentukpelanggaran}}</td>
+                    <td>{{ $item->bobot}}</td>
                     <td>{{ $item->oleh}}</td>
                     <td>{{ $item->tgl}}</td>
                     <td>{{date('d-m-Y', strtotime($item->ttl)) }}</td>
-                    <td>{{ $item->bobot}}</td>
                     <td>{{ $item->aksi}}</td>
                     <td>
                         <a href="delete/{{$item->id}}" class="btn btn-danger">Delete</a>

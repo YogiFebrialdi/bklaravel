@@ -144,7 +144,6 @@ Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])
 
 //formbimbingan
 Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
-Route::post('/simpan-formbimbingan',[FormbimbinganController::class, 'store'])->name('simpan-\formbimbingan');
 
 //Akunsiswa
 Route::get('/akunsiswa',[AkunsiswaController::class, 'index'])->name('akunsiswa');

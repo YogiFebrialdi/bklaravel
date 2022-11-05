@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inputpelanggaran;
 use App\Models\Historypelanggaran;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class HistorypelanggaranController extends Controller
      */
     public function index()
     {
-        $data = Historypelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
+        $data = Inputpelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
         return view('historypelanggaran.historypelanggaran', compact('data'));
     }
 
