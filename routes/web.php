@@ -16,6 +16,7 @@ use App\Http\Controllers\FormbimbinganController;
 use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
 use App\Http\Controllers\SanksiguruController;
+use App\Http\Controllers\SanksisiswaController;
 
 
 /*
@@ -161,3 +162,6 @@ Route::get('/delete-akunguru/{id}',[AkunguruController::class, 'destroy'])->name
 
 //sanksiguru
 Route::get('/lihat-sanksi',[SanksiguruController::class, 'index'])->name('lihat-sanksi');
+
+//sanksisiswa
+Route::get('/sanksi-siswa',[SanksiguruController::class, 'index'])->name('sanksi-siswa');
