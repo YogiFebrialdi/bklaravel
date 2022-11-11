@@ -10,7 +10,7 @@
             <h1 class="m-0">Sanksi Pelanggaran</h1>
           </div><!-- /.col -->
           <!-- /.col -->
-        </div><!-- /.row --> 
+        </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
 
@@ -22,7 +22,7 @@
             <div class="alert alert-success" role="alert">
               {{ $message }}
             </div>
-        @endif 
+        @endif
 
         <div class="card-body">
             <table class="table table-bordered">

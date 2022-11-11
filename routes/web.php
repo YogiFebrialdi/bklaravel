@@ -18,6 +18,8 @@ use App\Http\Controllers\AkunguruController;
 use App\Http\Controllers\SanksiguruController;
 use App\Http\Controllers\DaftarsiswaController;
 use App\Http\Controllers\InputpelanggaranController;
+use App\Http\Controllers\ProfileController;
+
 
 
 
@@ -173,3 +175,8 @@ Route::get('/daftarsiswa',[DaftarsiswaController::class, 'index'])->name('daftar
 Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->name('inputpelanggaran');
 Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
 Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');
+
+// //profile
+Route::get('/profile',[ProfileController::class, 'index'])->name('profile');
+Route::get('/setting',[ProfileController::class, 'setting'])->name('setting');
+// Route::patch('/profile/{id}',[ProfileController::class, 'update'])->name('profile.update');

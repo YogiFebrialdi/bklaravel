@@ -27,7 +27,7 @@
                 <input type="text" id="name" name="name" class="form-control" placeholder="Nama Siswa">
             </div>
 
-            <div class="form-group"> 
+            <div class="form-group">
                 <select class="form-control" name="level" arial-label="Default control example">
                     <option selected>Level</option>
                     <option value="guru">guru</option>

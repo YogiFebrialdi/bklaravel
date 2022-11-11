@@ -11,12 +11,12 @@ class Inputpelanggaran extends Model
     use HasFactory;
     use Sortable;
 
-    protected $table = "datasiswas";
+    protected $table = "datasiswa";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'nisn', 'nama', 'kelas'];
+        'id', 'nis', 'nama', 'kelas'];
 
     public $sortable = [
-        'id', 'nisn', 'nama', 'kelas'
+        'id', 'nis', 'nama', 'kelas'
     ];
 }

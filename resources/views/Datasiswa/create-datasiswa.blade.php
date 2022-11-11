@@ -24,7 +24,7 @@
            <form action="simpan-datasiswa" method="post">
             {{ csrf_field () }}
             <div class="form-group">
-                <input type="text" id="nisn" name="nisn" class="form-control" placeholder="Nis Siswa">
+                <input type="text" id="nis" name="nis" class="form-control" placeholder="Nis Siswa">
             </div>
             <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
@@ -33,7 +33,7 @@
                 <select class="form-control" name="kelas" arial-label="Default control example">
                     <option selected>Pilih Kelas</option>
                     @foreach ($kelas as $item)
-                    <option value="{{ $item->id }}">{{ $item->kelas }}</option>   
+                    <option value="{{ $item->id }}">{{ $item->kelas }}</option>
                     @endforeach
                 </select>
             </div>

@@ -43,7 +43,7 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-                    <th scope="col">@sortablelink('nisn', 'NIS')</th>
+                    <th scope="col">@sortablelink('nis', 'NIS')</th>
                     <th scope="col">@sortablelink('nama', 'NAMA')</th>
                     <th scope="col">Kelas</th>
                     {{-- <th scope="col">Jenis Kelamin</th>
@@ -59,7 +59,7 @@
                 @foreach ($data as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
-                    <td>{{ $item->nisn}}</td>
+                    <td>{{ $item->nis}}</td>
                     <td>{{ $item->nama}}</td>
                     <td>{{ $item->kelas}}</td>
                     {{-- <td>{{ $item->jk}}</td>

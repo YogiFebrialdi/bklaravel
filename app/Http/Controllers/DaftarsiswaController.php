@@ -14,12 +14,12 @@ class DaftarsiswaController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         $cari = $request->query('cari');
         if(!empty($cari)){
             $data = Daftarsiswa::sortable()
-            ->where('datasiswas.nisn', 'like', '%'. $cari. '%')
-            ->orWhere('datasiswas.nama', 'like', '%'. $cari. '%')
+            ->where('datasiswa.nis', 'like', '%'. $cari. '%')
+            ->orWhere('datasiswa.nama', 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('daftarsiswa');
         }else{
             $data =  Daftarsiswa::sortable()->paginate(5)->fragment('daftarsiswa');

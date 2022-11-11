@@ -10,7 +10,7 @@
             <h1 class="m-0">Sanksi</h1>
           </div><!-- /.col -->
           <!-- /.col -->
-        </div><!-- /.row --> 
+        </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
 

@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('datasiswas', function (Blueprint $table) {
+        Schema::create('datasiswa', function (Blueprint $table) {
             $table->id();
-            $table->integer('nisn')->unique();
+            $table->integer('nis')->unique();
             $table->string('nama')->NULL;
             $table->string('kelas')->NULL;
             $table->enum('jk', ['Laki-Laki', 'Perempuan'])->NULL;
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datasiswas');
+        Schema::dropIfExists('datasiswa');
     }
 };

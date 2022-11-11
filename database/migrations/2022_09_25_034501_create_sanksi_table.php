@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('formbimbingans', function (Blueprint $table) {
+        Schema::create('sanksi', function (Blueprint $table) {
             $table->id();
+            $table->string('kriteria')->nullable();
+            $table->string('keterangan')->nullable();
+            $table->string('bobot')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formbimbingans');
+        Schema::dropIfExists('sanksi');
     }
 };

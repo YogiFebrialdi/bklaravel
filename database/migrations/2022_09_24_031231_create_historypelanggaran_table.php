@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('historypelanggaran', function (Blueprint $table) {
             $table->id();
-            $table->string('nisn');
+            $table->string('nis');
             $table->string('nama');
             $table->string('kelas');
             $table->string('bentuk pelanggaran');

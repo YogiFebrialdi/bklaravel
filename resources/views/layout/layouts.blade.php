@@ -64,6 +64,21 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
+
+      @if (auth()->user()->level=="guru")
+      <li class="nav-item">
+        <a class="nav-link" data-widget="profile" href="profile" role="button">
+            <i class="nav-icon fas fa-user"></i>
+        </a>
+      </li>
+      @endif
+      @if (auth()->user()->level=="siswa")
+      <li class="nav-item">
+        <a class="nav-link" data-widget="profile" href="profile" role="button">
+            <i class="nav-icon fas fa-user"></i>
+        </a>
+      </li>
+      @endif
       <li class="nav-item">
         <a class="nav-link" data-widget="log-out" href="logout" role="button">
             <i class='fas fa-sign-out-alt'></i>
@@ -83,11 +98,9 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-
-      </div>
-
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        </div>
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -264,10 +277,10 @@
 
                       @if (auth()->user()->level=="guru")
                       <li class="nav-item">
-                        <a href="formbimbingan" class="nav-link">
+                        <a href="lihatbimbingan" class="nav-link">
                           <i class="nav-icon fas fa-tag"></i>
                           <p>
-                            Form Bimbingan
+                            Lihat Bimbingan
                           </p>
                         </a>
                         </li>

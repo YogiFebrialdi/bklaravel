@@ -24,7 +24,7 @@
            <form action="/update-datasiswa/{{$data->id}}" method="post">
             {{ csrf_field () }}
             <div class="form-group">
-                <input type="text" id="nisn" name="nisn" class="form-control" placeholder="Nis Siswa" value="{{ $data->nisn}}">
+                <input type="text" id="nis" name="nis" class="form-control" placeholder="Nis Siswa" value="{{ $data->nis}}">
             </div>
             <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa" value="{{ $data->nama}}">

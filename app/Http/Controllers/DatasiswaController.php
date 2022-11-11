@@ -21,8 +21,8 @@ class DatasiswaController extends Controller
         $cari = $request->query('cari');
         if(!empty($cari)){
             $data = Datasiswa::sortable()
-            ->where('datasiswas.nisn', 'like', '%'. $cari. '%')
-            ->orWhere('datasiswas.nama', 'like', '%'. $cari. '%')
+            ->where('datasiswa.nis', 'like', '%'. $cari. '%')
+            ->orWhere('datasiswa.nama', 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('datasiswa');
         }else{
             $data =  Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
@@ -59,7 +59,7 @@ class DatasiswaController extends Controller
     {
        //dd(request->all());
     //    datasiswa::create([
-    //     'nisn' => $request->nisn,
+    //     'nis' => $request->nis,
     //     'nama' => $request->nama,
     //     'jk' => $request->jk,
     //     'ttl' => $request->ttl,
