@@ -351,6 +351,18 @@
                         </li>
                         @endif
 
+                        @if (auth()->user()->level=="siswa")
+                        <li class="nav-item">
+                          <a href="sanksi-siswa" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i> 
+                            <p>
+                              Sanksi Pelanggaran
+                              <span class="badge badge-info right"></span>
+                            </p>
+                          </a>
+                        </li>
+                        @endif
+
 
       </nav>
       <!-- /.sidebar-menu -->
