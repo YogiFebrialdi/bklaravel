@@ -147,8 +147,6 @@ Route::get('/delete-benpel/{id}',[BenpelController::class, 'destroy'])->name('de
 Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])->name('historypelanggaran');
 Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::class, 'destroy'])->name('delete-historypelanggaran');
 
-//formbimbingan
-Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
 
 //Akunsiswa
 Route::get('/akunsiswa',[AkunsiswaController::class, 'index'])->name('akunsiswa');
@@ -175,7 +173,6 @@ Route::get('/daftarsiswa',[DaftarsiswaController::class, 'index'])->name('daftar
 //sanksisiswa
 Route::get('/sanksi-siswa',[SanksiguruController::class, 'index'])->name('sanksi-siswa');
 
-
 //inputpelanggaran
 Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->name('inputpelanggaran');
 Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
@@ -184,4 +181,16 @@ Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])-
 // //profile
 Route::get('/profile',[ProfileController::class, 'index'])->name('profile');
 Route::get('/setting',[ProfileController::class, 'setting'])->name('setting');
-// Route::patch('/profile/{id}',[ProfileController::class, 'update'])->name('profile.update');
+
+
+//livewire
+Route::get('/formbimbingan', function () {
+    return view('contact');
+});
+
+//tutor
+Route::get('/mahasiswa/create', 'MahasiswaController@create');
+
+
+// //formbimbingan
+// Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');

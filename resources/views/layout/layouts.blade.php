@@ -274,19 +274,6 @@
                       </li>
                       @endif
 
-
-                      @if (auth()->user()->level=="guru")
-                      <li class="nav-item">
-                        <a href="lihatbimbingan" class="nav-link">
-                          <i class="nav-icon fas fa-tag"></i>
-                          <p>
-                            Lihat Bimbingan
-                          </p>
-                        </a>
-                        </li>
-                        @endif
-
-
                         @if (auth()->user()->level=="guru")
                         <li class="nav-item">
                             <a href="daftarsiswa" class="nav-link">
@@ -354,7 +341,7 @@
                         @if (auth()->user()->level=="siswa")
                         <li class="nav-item">
                           <a href="sanksi-siswa" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i> 
+                            <i class="nav-icon fas fa-copy"></i>
                             <p>
                               Sanksi Pelanggaran
                               <span class="badge badge-info right"></span>

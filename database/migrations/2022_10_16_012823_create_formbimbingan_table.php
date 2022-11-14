@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('formbimbingan', function (Blueprint $table) {
             $table->id();
+            $table->integer('nis')->unique();
+            $table->string('nama')->nullable();
+            $table->string('kelas')->nullable();
+            $table->text('bimbingan')->nullable();
             $table->timestamps();
         });
     }

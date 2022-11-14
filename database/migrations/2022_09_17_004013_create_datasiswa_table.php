@@ -16,13 +16,17 @@ return new class extends Migration
         Schema::create('datasiswa', function (Blueprint $table) {
             $table->id();
             $table->integer('nis')->unique();
-            $table->string('nama')->NULL;
-            $table->string('kelas')->NULL;
-            $table->enum('jk', ['Laki-Laki', 'Perempuan'])->NULL;
-            $table->date('ttl')->NULL;
-            $table->string('alamat')->NULL;
-            $table->string('walimurid')->NULL;
-            $table->string('telepon')->NULL;
+            $table->string('nama')->nullable();
+            $table->string('kelas')->nullable();
+            $table->enum('jk', ['Laki-Laki', 'Perempuan'])->nullable();
+            $table->date('ttl')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('walimurid')->nullable();
+            $table->string('telepon')->nullable();
+            $table->string('bentuk pelanggaran')->nullable();
+            $table->string('bobot')->nullable();
+            $table->string('oleh')->nullable();
+            $table->date('tgl')->nullable();
             $table->timestamps();
         });
     }

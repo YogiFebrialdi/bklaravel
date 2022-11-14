@@ -14,9 +14,9 @@ class Inputpelanggaran extends Model
     protected $table = "datasiswa";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'nis', 'nama', 'kelas'];
+        'id', 'nis', 'nama', 'kelas', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'];
 
     public $sortable = [
-        'id', 'nis', 'nama', 'kelas'
+        'id', 'nis', 'nama', 'kelas', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'
     ];
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kelas;
 use App\Models\Inputpelanggaran;
 use App\Models\Benpel;
-use App\Models\Historypelanggaran;
+use App\Models\Datasiswa;
 use Illuminate\Http\Request;
 
 class InputpelanggaranController extends Controller
