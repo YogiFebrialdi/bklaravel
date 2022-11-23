@@ -20,4 +20,7 @@ class Kategori extends Model
     public $sortable = [
         'id', 'kategori', 'benpel'
     ];
+    public function benpel(){
+        return $this->hasMany(Benpel::class);
+    }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('nis')->unique();
             $table->string('nama')->nullable();
-            $table->string('kelas')->nullable();
+            $table->bigInteger('kelas_id');
             $table->enum('jk', ['Laki-Laki', 'Perempuan'])->nullable();
             $table->date('ttl')->nullable();
             $table->string('alamat')->nullable();

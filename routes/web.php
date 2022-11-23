@@ -145,6 +145,7 @@ Route::get('/delete-benpel/{id}',[BenpelController::class, 'destroy'])->name('de
 
 //historypelanggaran
 Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])->name('historypelanggaran');
+// Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'store'])->name('historypelanggaran');
 Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::class, 'destroy'])->name('delete-historypelanggaran');
 
 //formbimbingan
@@ -178,7 +179,7 @@ Route::get('/sanksi-siswa',[SanksiguruController::class, 'index'])->name('sanksi
 
 //inputpelanggaran
 Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->name('inputpelanggaran');
-Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
+Route::get('/create-pelanggaran/{id}',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
 Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');
 
 // //profile

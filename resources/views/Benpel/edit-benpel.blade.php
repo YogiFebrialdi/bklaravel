@@ -24,8 +24,13 @@
            <form action="/update-benpel/{{$data->id}}" method="post">
             {{ csrf_field () }}
             <div class="form-group">
-                <input type="text" id="kategori" name="kategori" class="form-control" placeholder="Kategori Pelanggaran" value="{{ $data->kategori}}">
-            </div>
+              <select class="form-control" name="kategori_id" arial-label="Default control example">
+                  <option selected>Pilih Kategori</option>
+                  @foreach ($kategori as $item)
+                  <option value="{{ $item->id }}">{{ $item->kategori }}</option>
+                  @endforeach
+              </select>
+          </div>
             <div class="form-group">
                 <input type="text" id="benpel" name="benpel" class="form-control" placeholder="Bentuk Pelanggaran" value="{{ $data->benpel}}">
             </div>

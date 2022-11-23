@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Benpel;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class BenpelController extends Controller
@@ -25,7 +26,10 @@ class BenpelController extends Controller
      */
     public function create()
     {
-        return view('Benpel.create-benpel');
+        $kategori = Kategori::all();
+        return view('Benpel.create-benpel')->with([
+            'kategori' => $kategori,
+        ]);
     }
 
     /**
@@ -59,8 +63,12 @@ class BenpelController extends Controller
      */
     public function edit($id)
     {
+        $kategori = Kategori::all();
         $data = Benpel::findOrFail($id);
-        return view('Benpel.edit-benpel', compact('data'));
+        return view('Benpel.edit-benpel')->with([
+            'data' => $data,
+            'kategori' => $kategori,
+        ]);
     }
 
     /**

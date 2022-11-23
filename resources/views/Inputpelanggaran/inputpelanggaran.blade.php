@@ -61,14 +61,14 @@
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->nis}}</td>
                     <td>{{ $item->nama}}</td>
-                    <td>{{ $item->kelas}}</td>
+                    <td>{{ $item->kelas->kelas}}</td>
                     {{-- <td>{{ $item->jk}}</td>
                     <td>{{date('d-m-Y', strtotime($item->ttl)) }}</td>
                     <td>{{ $item->alamat}}</td>
                     <td>{{ $item->walimurid}}</td>
                     <td>{{ $item->telepon}}</td> --}}
                     <td>
-                        <a href="create-pelanggaran" class="btn btn-success">Tambah Pelanggaran <i class="fas fa-plus-square"></i></a>
+                        <a href="create-pelanggaran/{{$item->id}}" class="btn btn-success">Tambah Pelanggaran <i class="fas fa-plus-square"></i></a>
                         {{-- <a href="edit-datasiswa/{{$item->id}}" class="btn btn-info">Edit</a>
                         <a href="delete-datasiswa/{{$item->id}}" class="btn btn-danger">Delete</a> --}}
                     </td>

@@ -24,8 +24,11 @@
            <form action="simpan-pelanggaran" method="post">
             {{ csrf_field () }}
             <div class="form-group">
-                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
+                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa" value="{{ $data->nama}}">
             </div>
+            {{-- <div class="form-group">
+                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas}}">
+            </div> --}}
             <div class="form-group">
                 <select class="form-control" name="kelas" arial-label="Default control example">
                     <option selected>Pilih Kelas</option>

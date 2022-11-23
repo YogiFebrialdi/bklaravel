@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('benpel', function (Blueprint $table) {
             $table->id();
-            $table->string('kategori')->nullable();
+            $table->bigInteger('kategori_id');
             $table->string('benpel')->nullable();
             $table->integer('bobot')->nullable();
             $table->timestamps();

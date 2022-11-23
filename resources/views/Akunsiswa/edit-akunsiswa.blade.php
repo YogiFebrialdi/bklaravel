@@ -19,13 +19,6 @@
             <div class="card-header">
                 <h3>Edit Akun Siswa</h3>
             </div>
-
-        <div class="card-body">
-            <div class="card card-info card-outline">
-                <div class="card-header">
-                    <h3>Edit Data Siswa</h3>
-                </div>
-
             <div class="card-body">
                <form action="/update-akunsiswa/{{$data->id}}" method="post">
                 {{ csrf_field () }}

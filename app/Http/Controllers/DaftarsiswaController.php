@@ -22,7 +22,7 @@ class DaftarsiswaController extends Controller
             ->orWhere('datasiswa.nama', 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('daftarsiswa');
         }else{
-            $data =  Daftarsiswa::sortable()->paginate(5)->fragment('daftarsiswa');
+            $data =  Daftarsiswa::with('kelas')->sortable()->paginate(5)->fragment('daftarsiswa');
         }
 
     //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');

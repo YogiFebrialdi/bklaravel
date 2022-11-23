@@ -15,8 +15,8 @@ class HistorypelanggaranController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Inputpelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
-        return view('historypelanggaran.historypelanggaran', compact('data'));
+        $data = Historypelanggaran::with('kelas', 'benpel')->sortable()->paginate(5)->fragment('historypelanggaran');
+        return view('Historypelanggaran.historypelanggaran', compact('data'));
     }
 
     /**
@@ -37,7 +37,7 @@ class HistorypelanggaranController extends Controller
      */
     public function store(Request $request)
     {
-        Inputpelanggaran::create($request->all());
+        Historypelanggaran::create($request->all());
     return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
     }
 
@@ -83,7 +83,7 @@ class HistorypelanggaranController extends Controller
      */
     public function destroy($id)
     {
-        $data = Inputpelanggaran::findOrFail($id);
+        $data = Historypelanggaran::findOrFail($id);
         $data->delete();
         return back()->with('success','Data Berhasil Di Hapus');;
     }

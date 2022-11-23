@@ -14,9 +14,17 @@ class Benpel extends Model
     protected $table = "benpel";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'kategori', 'benpel', 'bobot'];
+        'id', 'kategori_id', 'benpel', 'bobot'];
 
     public $sortable = [
-        'id', 'kategori', 'benpel'
+        'id', 'kategori_id', 'benpel'
     ];
+
+    public function kategori(){
+        return $this->belongsTo(Kategori::class);
+    }
+
+    public function historypelanggaran(){
+        return $this->hasMany(Historypelanggaran::class);
+    }
 }

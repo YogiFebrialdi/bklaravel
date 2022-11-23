@@ -43,7 +43,7 @@
                 @foreach ($data as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
-                    <td>{{ $item->kategori}}</td>
+                    <td>{{ $item->kategori->kategori}}</td>
                     <td>{{ $item->benpel}}</td>
                     <td>{{ $item->bobot}}</td>
                     <td>

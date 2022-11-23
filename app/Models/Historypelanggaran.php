@@ -14,9 +14,17 @@ class Historypelanggaran extends Model
     protected $table = "historypelanggaran";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id','nis', 'nama', 'kelas', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'];
+        'id', 'nama', 'kelas_id', 'benpel_id', 'bobot_id', 'oleh', 'tgl'];
 
     public $sortable = [
-        'id','nis', 'nama', 'kelas', 'bentuk pelanggaran', 'bobot', 'oleh', 'tgl'
+        'id', 'nama', 'kelas_id', 'benpel_id', 'bobot_id', 'oleh', 'tgl'
     ];
+
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
+
+    public function benpel(){
+        return $this->belongsTo(Benpel::class);
+    }
 }

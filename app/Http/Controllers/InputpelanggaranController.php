@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelas;
+use App\Models\Datasiswa;
 use App\Models\Inputpelanggaran;
 use App\Models\Benpel;
 use App\Models\Historypelanggaran;
@@ -26,7 +27,7 @@ class InputpelanggaranController extends Controller
             ->orWhere('datasiswa.nama', 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('inputpelanggaran');
         }else{
-            $data =  Inputpelanggaran::sortable()->paginate(5)->fragment('inputpelanggaran');
+            $data =  Inputpelanggaran::with('kelas')->sortable()->paginate(5)->fragment('inputpelanggaran');
         }
 
     //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
@@ -42,13 +43,15 @@ class InputpelanggaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         $kelas = Kelas::all();
         $benpel = Benpel::all();
+        $data = Datasiswa::findOrFail($id);
         return view('Inputpelanggaran.create-pelanggaran')->with([
             'benpel' => $benpel,
             'kelas' => $kelas,
+            'data' => $data,
         ]);;
     }
 
@@ -60,17 +63,7 @@ class InputpelanggaranController extends Controller
      */
     public function store(Request $request)
     {
-       //dd(request->all());
-    //    datasiswa::create([
-    //     'nis' => $request->nis,
-    //     'nama' => $request->nama,
-    //     'jk' => $request->jk,
-    //     'ttl' => $request->ttl,
-    //     'alamat' => $request->alamat,
-    //     'walimurid' => $request->walimurid,
-    //     'telepon' => $request->telepon,
-    //    ]);
-    Inputpelanggaran::create($request->all());
+    Historypelanggaran::create($request->all());
     return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
 
        //return redirect('datasiswa');

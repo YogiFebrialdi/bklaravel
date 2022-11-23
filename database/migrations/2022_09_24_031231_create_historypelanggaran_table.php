@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('historypelanggaran', function (Blueprint $table) {
             $table->id();
-            $table->string('nis');
             $table->string('nama');
-            $table->string('kelas');
-            $table->string('bentuk pelanggaran');
-            $table->string('bobot');
+            $table->bigInteger('kelas_id');
+            $table->bigInteger('benpel_id');
+            $table->bigInteger('bobot_id');
             $table->string('oleh');
             $table->date('tgl');
             $table->timestamps();

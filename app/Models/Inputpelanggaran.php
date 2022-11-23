@@ -14,9 +14,13 @@ class Inputpelanggaran extends Model
     protected $table = "datasiswa";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'nis', 'nama', 'kelas'];
+        'id', 'nis', 'nama', 'kelas_id'];
 
     public $sortable = [
-        'id', 'nis', 'nama', 'kelas'
+        'id', 'nis', 'nama', 'kelas_id'
     ];
+
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
 }
