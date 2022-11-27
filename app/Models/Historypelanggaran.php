@@ -11,7 +11,7 @@ class Historypelanggaran extends Model
     use HasFactory;
     use Sortable;
 
-    protected $table = "historypelanggaran";
+    protected $table = "datasiswa";
     protected $primaryKey = "id";
     protected $fillable = [
         'id', 'nama', 'kelas_id', 'benpel_id', 'bobot_id', 'oleh', 'tgl'];
