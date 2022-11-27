@@ -12,7 +12,6 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BenpelController;
 use App\Http\Controllers\HistorypelanggaranController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FormbimbinganController;
 use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
 use App\Http\Controllers\SanksiguruController;
@@ -20,6 +19,9 @@ use App\Http\Controllers\DaftarsiswaController;
 use App\Http\Controllers\SanksisiswaController;
 use App\Http\Controllers\InputpelanggaranController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BimbingansiswaController;
+use App\Http\Controllers\BimbinganadminController;
+
 
 
 
@@ -178,19 +180,21 @@ Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->na
 Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
 Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');
 
-// //profile
+//profile
 Route::get('/profile',[ProfileController::class, 'index'])->name('profile');
 Route::get('/setting',[ProfileController::class, 'setting'])->name('setting');
 
-
-//livewire
-Route::get('/formbimbingan', function () {
-    return view('contact');
-});
-
-//tutor
-Route::get('/mahasiswa/create', 'MahasiswaController@create');
+//bimbingansiswa
+Route::get('/bimbingansiswa',[BimbingansiswaController::class, 'index'])->name('bimbingansiswa');
+Route::get('/create-bimbingansiswa',[BimbingansiswaController::class, 'create'])->name('create-bimbingansiswa');
+Route::post('/simpan-bimbingansiswa',[BimbingansiswaController::class, 'store'])->name('simpan-bimbingansiswa');
+Route::get('/edit-bimbingansiswa/{id}',[BimbingansiswaController::class, 'edit'])->name('edit-bimbingansiswa');
+Route::post('/update-bimbingansiswa/{id}',[BimbingansiswaController::class, 'update'])->name('update-bimbingansiswa');
 
 
-// //formbimbingan
-// Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
+
+//bimbinganadmin
+Route::get('/bimbinganadmin',[BimbinganadminController::class, 'index'])->name('bimbinganadmin');
+Route::get('/tanggapibimbingan/{id}',[BimbinganadminController::class, 'edit'])->name('tanggapibimbingan');
+Route::post('/update-bimbinganadmin/{id}',[BimbinganadminController::class, 'update'])->name('update-bimbinganadmin');
+Route::get('/delete-bimbinganadmin/{id}',[BimbinganadminController::class, 'destroy'])->name('delete-bimbinganadmin');
