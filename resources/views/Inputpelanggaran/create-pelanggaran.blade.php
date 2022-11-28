@@ -30,12 +30,7 @@
                 <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas}}">
             </div> --}}
             <div class="form-group">
-                <select class="form-control" name="kelas" arial-label="Default control example">
-                    <option selected>Pilih Kelas</option>
-                    @foreach ($kelas as $item )
-                    <option value="{{ $item->id }}">{{ $item->kelas }}</option>
-                    @endforeach
-                </select>
+                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas->kelas}}">
             </div>
             {{-- <div class="form-group">
                 <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
