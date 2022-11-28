@@ -48,7 +48,7 @@
                     <th scope="col">Kelas</th>
                     <th scope="col">Jenis Kelamin</th>
                     <th scope="col">Tanggal Lahir</th>
-                    <th scope="col">Alamat</th>
+                    <th width="30%">Alamat</th>
                     <th scope="col">Walimurid</th>
                     <th scope="col">Telepon</th>
                 </tr>
