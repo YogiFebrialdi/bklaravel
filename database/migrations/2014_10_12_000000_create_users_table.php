@@ -15,7 +15,12 @@ return new class extends Migration
     {
          Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->date('tglbim')->nullable();
              $table->string('name');
+             $table->string('kelas')->nullable();
+             $table->text('bimbingan')->nullable();
+             $table->text('tanggapan')->nullable();
+             $table->text('keterangan')->nullable();
              $table->string('level');
              $table->string('email')->unique();
              $table->timestamp('email_verified_at')->nullable();

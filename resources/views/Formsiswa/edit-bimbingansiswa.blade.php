@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Edit Bimbingan</h1>
+            <h1 class="m-0">Tambah Bimbingan</h1>
           </div><!-- /.col -->
           <!-- /.col -->
         </div><!-- /.row -->
@@ -22,17 +22,15 @@
         <div class="card-body">
            <form action="/update-bimbingansiswa/{{$data->id}}" method="post">
             {{ csrf_field () }}
+
             <div class="form-group">
-                <input type="date" id="tglbim" name="tglbim" class="form-control" placeholder="Tanggal Bimbingan" value="{{ $data->tglbim}}">
-            </div>
-            <div class="form-group">
-                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama" value="{{ $data->nama}}">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Nama" value="{{ $data->name}}">
             </div>
             <div class="form-group">
                 <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas}}">
             </div>
             <div class="form-group">
-                <textarea id="bimbingan" name="bimbingan" class="form-control" placeholder="Bimbingan"> {{ $data->bimbingan}}</textarea>
+                <textarea id="bimbingan" name="bimbingan" class="form-control" placeholder="Bimbingan"></textarea>
             </div>
             <div class="form-group">
                 <select class="form-control" name="keterangan" arial-label="Default control example">
@@ -41,7 +39,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-success">Ubah Data</button>
+                <input type="date" id="tglbim" name="tglbim" class="form-control" placeholder="Tanggal Bimbingan" value="{{ $data->tglbim}}">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Kirim</button>
             </div>
            </form>
         </div>

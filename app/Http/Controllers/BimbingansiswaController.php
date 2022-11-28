@@ -15,6 +15,7 @@ class BimbingansiswaController extends Controller
     public function index(Request $request)
     {
         $cari = $request->query('cari');
+        $siswa = Bimbingansiswa::where('level','siswa')->get();
         if(!empty($cari)){
             $data = Bimbingansiswa::sortable()
             ->where('form.tglbim', 'like', '%'. $cari. '%')
@@ -28,6 +29,7 @@ class BimbingansiswaController extends Controller
         return view('Formsiswa.bimbingansiswa')->with([
             'data' => $data,
             'cari' => $cari,
+            'siswa' => $siswa,
         ]);
     }
 
@@ -88,7 +90,7 @@ class BimbingansiswaController extends Controller
     {
         $data = Bimbingansiswa::findOrFail($id);
         $data->update($request->all());
-        return redirect()->route('bimbingansiswa')->with('success','Data Berhasil Di Update');
+        return redirect()->route('bimbingansiswa')->with('success','Data Berhasil Di Kirim');
     }
 
     // /**
