@@ -44,28 +44,24 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-                    <th scope="col">@sortablelink('tglbim', 'Tanggal Bimbingan')</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Kelas</th>
                     <th scope="col">@sortablelink('keterangan', 'Keterangan')</th>
+                    <th scope="col">@sortablelink('tglbim', 'Tanggal Bimbingan')</th>
                     <th scope="col">Aksi</th>
                 </tr>
                 @php
                   $no = 1 + (($data->currentPage()-1) * $data->perPage());
                 @endphp
-                @foreach ($data as $item)
+                @foreach ($siswa as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
-                    <td>{{date('d-m-Y', strtotime($item->tglbim)) }}</td>
-                    <td>{{ $item->nama}}</td>
+                    <td>{{ $item->name}}</td>
                     <td>{{ $item->kelas}}</td>
                     <td>{{ $item->keterangan}}</td>
+                    <td>{{date('d-m-Y', strtotime($item->tglbim)) }}</td>
                     <td>
                         <a href="tanggapibimbingan/{{$item->id}}" class="fas fa-eye"></a>
-                        <a href="delete-bimbinganadmin/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Bimbingan Siswa?');"  class="fas fa-trash"></a>
-                        {{-- <label for="checkbox1" class="form-check-label ">
-                            <input type="checkbox" name="nama[]">
-                        </label> --}}
                     </td>
                 </tr>
                 @endforeach

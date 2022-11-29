@@ -10,10 +10,10 @@ class Bimbingansiswa extends Model
 {
     use HasFactory;
     use Sortable;
-    protected $table = "form";
+    protected $table = "users";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id','tglbim','nama','kelas','bimbingan','tanggapan','keterangan'];
+        'id','tglbim','name','kelas','bimbingan','tanggapan','keterangan'];
 
     public $sortable = [
         'id','tglbim','keterangan'];

@@ -24,7 +24,7 @@
            <form action="/update-bimbinganadmin/{{$data->id}}" method="post">
             {{ csrf_field () }}
             <div class="form-group">
-                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama" value="{{ $data->nama}}">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Nama" value="{{ $data->name}}">
             </div>
             <div class="form-group">
                 <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas}}">
@@ -33,7 +33,7 @@
                 <textarea id="bimbingan" name="bimbingan" class="form-control" placeholder="Bimbingan">{{ $data->bimbingan}}</textarea>
             </div>
             <div class="form-group">
-                <textarea id="tanggapan" name="tanggapan" class="form-control" placeholder="tanggapan">{{ $data->tanggapan}}</textarea>
+                <textarea id="tanggapan" name="tanggapan" class="form-control" placeholder="tanggapan"></textarea>
             </div>
             <div class="form-group">
                 <select class="form-control" name="keterangan" arial-label="Default control example">

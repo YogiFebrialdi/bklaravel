@@ -15,6 +15,7 @@ class BimbinganadminController extends Controller
     public function index(Request $request)
     {
         $cari = $request->query('cari');
+        $siswa = Bimbinganadmin::where('level', 'siswa')->get();
         if(!empty($cari)){
             $data = Bimbinganadmin::sortable()
             ->where('form.tglbim', 'like', '%'. $cari. '%')
@@ -29,6 +30,7 @@ class BimbinganadminController extends Controller
         return view('Formadmin.bimbinganadmin')->with([
             'data' => $data,
             'cari' => $cari,
+            'siswa' => $siswa,
         ]);
     }
 
@@ -100,8 +102,6 @@ class BimbinganadminController extends Controller
     //  */
     public function destroy($id)
     {
-        $data = Bimbinganadmin::findOrFail($id);
-        $data->delete();
-        return back()->with('success','Data Berhasil Di Hapus');;
+        //
     }
 }

@@ -17,9 +17,9 @@
     <div class="content">
         <div class="card card-info card-outline">
             <div class="card-header">
-            <div class="card-tools">
+            {{-- <div class="card-tools">
                 <a href="create-bimbingansiswa" class="btn btn-success">Tambah Bimbingan Siswa <i class="fas fa-plus-square"></i></a>
-            </div>
+            </div> --}}
         </div>
         @if ($message = Session:: get('success'))
             <div class="alert alert-success" role="alert">
@@ -45,26 +45,28 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-                    <th scope="col">@sortablelink('tglbim', 'Tanggal Bimbingan')</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Kelas</th>
                     <th width="30%">Bimbingan</th>
                     <th width="20%">Tanggapan</th>
+                    <th scope="col">@sortablelink('keterangan', 'Keterangan')</th>
+                    <th scope="col">@sortablelink('tglbim', 'Tanggal Bimbingan')</th>
                     <th scope="col">Aksi</th>
                 </tr>
                 @php
                   $no = 1 + (($data->currentPage()-1) * $data->perPage());
                 @endphp
-                @foreach ($data as $item)
+                @foreach ($siswa as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
-                    <td>{{date('d-m-Y', strtotime($item->tglbim)) }}</td>
-                    <td>{{ $item->nama}}</td>
+                    <td>{{ $item->name}}</td>
                     <td>{{ $item->kelas}}</td>
                     <td>{{ $item->bimbingan}}</td>
                     <td>{{ $item->tanggapan}}</td>
+                    <td>{{ $item->keterangan}}</td>
+                    <td>{{date('d-m-Y', strtotime($item->tglbim)) }}</td>
                     <td>
-                        <a href="edit-bimbingansiswa/{{$item->id}}" class="btn btn-info">Edit</a>
+                        <a href="edit-bimbingansiswa/{{$item->id}}" class="btn btn-success">Tambah Bimbingan</a>
                     </td>
                 </tr>
                 @endforeach

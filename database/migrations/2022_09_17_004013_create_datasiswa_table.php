@@ -17,23 +17,12 @@ return new class extends Migration
             $table->id();
             $table->integer('nis')->unique();
             $table->string('nama')->nullable();
-<<<<<<< HEAD
             $table->bigInteger('kelas_id');
-=======
-            $table->string('kelas')->nullable();
->>>>>>> chat
             $table->enum('jk', ['Laki-Laki', 'Perempuan'])->nullable();
             $table->date('ttl')->nullable();
             $table->string('alamat')->nullable();
             $table->string('walimurid')->nullable();
             $table->string('telepon')->nullable();
-<<<<<<< HEAD
-=======
-            $table->string('bentuk pelanggaran')->nullable();
-            $table->string('bobot')->nullable();
-            $table->string('oleh')->nullable();
-            $table->date('tgl')->nullable();
->>>>>>> chat
             $table->timestamps();
         });
     }

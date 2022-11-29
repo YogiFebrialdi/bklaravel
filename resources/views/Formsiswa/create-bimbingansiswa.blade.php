@@ -28,10 +28,7 @@
                 <form action="simpan-bimbingansiswa" method="post">
                     {{ csrf_field () }}
                     <div class="form-group">
-                        <input type="date" id="tglbim" name="tglbim" class="form-control" placeholder="Tanggal Bimbingan">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Nama">
                     </div>
                     <div class="form-group">
                         <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
@@ -44,6 +41,9 @@
                             <option selected>Keterangan</option>
                             <option value="Belum Ditanggapi">Belum Ditanggapi</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="tglbim" name="tglbim" class="form-control" placeholder="Tanggal Bimbingan">
                     </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Kirim</button>
