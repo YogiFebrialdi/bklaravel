@@ -17,7 +17,7 @@
     <div class="content">
         <div class="card card-info card-outline">
             <div class="card-header">
-                <h3>Tanggapi Bimbingan</h3>
+                <h3>Tanggapi Bimbingan siswa</h3>
             </div>
 
         <div class="card-body">
