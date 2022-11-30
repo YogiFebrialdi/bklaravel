@@ -122,7 +122,7 @@
                with font-awesome or any other icon font library -->
                @if (auth()->user()->level=="admin")
           <li class="nav-item">
-            <a href="dashboard" class="nav-link">
+            <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="dashboard">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard Admin
@@ -134,7 +134,7 @@
 
           @if (auth()->user()->level=="admin")
           <li class="nav-item">
-            <a href="datasiswa" class="nav-link">
+            <a class="nav-link {{ Request::is('datasiswa') ? 'active' : '' }}" href="datasiswa">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Data siswa
@@ -147,7 +147,7 @@
 
           @if (auth()->user()->level=="admin")
           <li class="nav-item">
-            <a href="pelanggaran" class="nav-link">
+            <a class="nav-link {{ Request::is('pelanggaran') ? 'active' : '' }}" href="pelanggaran">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Pelanggaran
@@ -157,7 +157,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="kategori" class="nav-link">
+                <a class="nav-link {{ Request::is('kategori') ? 'active' : '' }}" href="kategori">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kategori Pelanggaran</p>
                 </a>
@@ -167,7 +167,7 @@
 
             @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a href="benpel" class="nav-link">
+                <a class="nav-link {{ Request::is('benpel') ? 'active' : '' }}" href="benpel">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bentuk Pelanggaran</p>
                 </a>
@@ -177,7 +177,7 @@
 
             @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a href="sanksi" class="nav-link">
+                <a class="nav-link {{ Request::is('sanksi') ? 'active' : '' }}" href="sanksi">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sanksi Pelanggaran</p>
                 </a>
@@ -189,7 +189,7 @@
 
           @if (auth()->user()->level=="admin")
           <li class="nav-item">
-            <a href="kelas" class="nav-link">
+            <a class="nav-link {{ Request::is('kelas') ? 'active' : '' }}" href="kelas">
               <i class="nav-icon fas fa-tag"></i>
               <p>
                 kelas
@@ -201,7 +201,7 @@
 
             @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a href="akunsiswa" class="nav-link">
+                <a class="nav-link {{ Request::is('akunsiswa') ? 'active' : '' }}" href="akunsiswa">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                  Akun Siswa
@@ -213,7 +213,7 @@
 
             @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a href="akunguru" class="nav-link">
+                <a class="nav-link {{ Request::is('akunguru') ? 'active' : '' }}" href="akunguru">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                  Akun Guru
@@ -222,10 +222,20 @@
             </li>
             @endif
 
+            @if (auth()->user()->level=="admin")
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('bimbinganadmin') ? 'active' : '' }}" href="bimbinganadmin">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                     Data Bimbingan
+                </p>
+                </a>
+            </li>
+            @endif
 
             @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a href="historypelanggaran" class="nav-link">
+                <a class="nav-link {{ Request::is('historypelanggaran') ? 'active' : '' }}" href="historypelanggaran">
                   <i class="nav-icon fas fa-chart-pie"></i>
                   <p>
                     History Pelanggaran
@@ -242,7 +252,7 @@
 
                            @if (auth()->user()->level=="guru")
                       <li class="nav-item">
-                        <a href="dashboard" class="nav-link">
+                        <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="dashboard">
                           <i class="nav-icon fas fa-home"></i>
                           <p>
                             Dashboard Guru
@@ -253,7 +263,7 @@
 
                       @if (auth()->user()->level=="guru")
                       <li class="nav-item">
-                        <a href="inputpelanggaran" class="nav-link">
+                        <a class="nav-link {{ Request::is('inputpelanggaran') ? 'active' : '' }}" href="inputpelanggaran">
                           <i class="nav-icon fas fa-th"></i>
                           <p>
                             Input Pelanggaran
@@ -265,7 +275,7 @@
 
                       @if (auth()->user()->level=="guru")
                       <li class="nav-item">
-                        <a href="lihat-sanksi" class="nav-link">
+                        <a class="nav-link {{ Request::is('lihat-sanksi') ? 'active' : '' }}" href="lihat-sanksi">
                           <i class="nav-icon fas fa-copy"></i>
                           <p>
                             Sanksi Pelanggaran
@@ -275,22 +285,9 @@
                       </li>
                       @endif
 
-
-                      @if (auth()->user()->level=="guru")
-                      <li class="nav-item">
-                        <a href="lihatbimbingan" class="nav-link">
-                          <i class="nav-icon fas fa-tag"></i>
-                          <p>
-                            Lihat Bimbingan
-                          </p>
-                        </a>
-                        </li>
-                        @endif
-
-
                         @if (auth()->user()->level=="guru")
                         <li class="nav-item">
-                            <a href="daftarsiswa" class="nav-link">
+                            <a class="nav-link {{ Request::is('daftarsiswa') ? 'active' : '' }}" href="daftarsiswa">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
                              Daftar Siswa
@@ -302,7 +299,7 @@
 
                         @if (auth()->user()->level=="guru")
                         <li class="nav-item">
-                            <a href="historypelanggaran" class="nav-link">
+                            <a class="nav-link {{ Request::is('historypelanggaran') ? 'active' : '' }}" href="historypelanggaran">
                               <i class="nav-icon fas fa-chart-pie"></i>
                               <p>
                                 History Pelanggaran
@@ -319,7 +316,7 @@
 
                            @if (auth()->user()->level=="siswa")
                       <li class="nav-item">
-                        <a href="dashboard" class="nav-link">
+                        <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="dashboard">
                           <i class="nav-icon fas fa-home"></i>
                           <p>
                             Dashboard Siswa
@@ -331,31 +328,51 @@
 
                       @if (auth()->user()->level=="siswa")
                       <li class="nav-item">
-                        <a href="formbimbingan" class="nav-link">
+                        <a class="nav-link {{ Request::is('bimbingansiswa') ? 'active' : '' }}" href="bimbingansiswa">
                           <i class="nav-icon fas fa-tag"></i>
                           <p>
-                            Form Bimbingan
+                            Bimbingan Siswa
                           </p>
                         </a>
                         </li>
                         @endif
+{{--
+                        @if (auth()->user()->level=="siswa")
+                      <li class="nav-item">
+                        <a class="nav-link {{ Request::is('lihatbimbingan') ? 'active' : '' }}" href="lihatbimbingan">
+                          <i class="nav-icon fas fa-tag"></i>
+                          <p>
+                            Lihat Bimbingan
+                          </p>
+                        </a>
+                        </li>
+                        @endif --}}
 
 
                         @if (auth()->user()->level=="siswa")
                         <li class="nav-item">
+<<<<<<< HEAD
                           <a href="historypelanggaransiswa" class="nav-link">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>
                               History Pelanggaran
                             </p>
                           </a>
+=======
+                            <a class="nav-link {{ Request::is('datapelanggaran') ? 'active' : '' }}" href="datapelanggaran">
+                              <i class="nav-icon fas fa-chart-pie"></i>
+                              <p>
+                                Data Pelanggaran
+                              </p>
+                            </a>
+>>>>>>> df2a529e8ba7cc112d0aa55b865966d5c9b8b95c
                         </li>
                         @endif
 
                         @if (auth()->user()->level=="siswa")
                         <li class="nav-item">
-                          <a href="sanksi-siswa" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i> 
+                            <a class="nav-link {{ Request::is('sanksi-siswa') ? 'active' : '' }}" href="sanksi-siswa">
+                            <i class="nav-icon fas fa-copy"></i>
                             <p>
                               Sanksi Pelanggaran
                               <span class="badge badge-info right"></span>
@@ -415,6 +432,12 @@
 <script src="{{ asset('template/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template/dist/js/pages/dashboard2.js') }}"></script>
+<!-- email -->
+{{-- <link rel="stylesheet" href="{{ asset/app.css }}">
+    <script src="{{ asset('ks/app.js')}}"></script> --}}
+
+<!--emailibrary!>
+        <link rel="stylesheet" href="{{ url('css/app.css') }}" />
 
 </body>
 </html>

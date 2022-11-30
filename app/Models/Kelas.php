@@ -19,4 +19,20 @@ class Kelas extends Model
 
     public $sortable = [
         'id', 'kelas'];
+
+    public function datasiswa(){
+        return $this->hasMany(Datasiswa::class);
+    }
+
+    public function daftarsiswa(){
+        return $this->hasMany(Daftarsiswa::class);
+    }
+
+    public function inputpelanggaran(){
+        return $this->hasMany(Inputpelanggaran::class);
+    }
+
+    public function historypelanggaran(){
+        return $this->hasMany(Historypelanggaran::class);
+    }
 }

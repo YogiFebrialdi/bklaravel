@@ -15,13 +15,13 @@ class Datasiswa extends Model
     protected $table = "datasiswa";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'nis', 'nama', 'kelas', 'jk', 'ttl', 'alamat', 'walimurid', 'telepon'];
+        'id', 'nis', 'nama', 'kelas_id', 'jk', 'ttl', 'alamat', 'walimurid', 'telepon'];
 
     public $sortable = [
-        'id', 'nis', 'nama', 'kelas', 'jk', 'ttl', 'alamat', 'walimurid', 'telepon'
+        'id', 'nis', 'nama'
     ];
 
     public function kelas(){
-        return $this->belongsTo('App\Models\Kelas');
+        return $this->belongsTo(Kelas::class);
     }
 }

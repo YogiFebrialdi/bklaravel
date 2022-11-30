@@ -12,7 +12,6 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BenpelController;
 use App\Http\Controllers\HistorypelanggaranController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FormbimbinganController;
 use App\Http\Controllers\AkunsiswaController;
 use App\Http\Controllers\AkunguruController;
 use App\Http\Controllers\SanksiguruController;
@@ -20,7 +19,13 @@ use App\Http\Controllers\DaftarsiswaController;
 use App\Http\Controllers\SanksisiswaController;
 use App\Http\Controllers\InputpelanggaranController;
 use App\Http\Controllers\ProfileController;
+<<<<<<< HEAD
 use App\Http\Controllers\HistorypelanggaransiswaController;
+=======
+use App\Http\Controllers\BimbingansiswaController;
+use App\Http\Controllers\BimbinganadminController;
+
+>>>>>>> df2a529e8ba7cc112d0aa55b865966d5c9b8b95c
 
 
 
@@ -146,11 +151,13 @@ Route::get('/delete-benpel/{id}',[BenpelController::class, 'destroy'])->name('de
 
 //historypelanggaran
 Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])->name('historypelanggaran');
+<<<<<<< HEAD
 Route::get('/historypelanggaransiswa',[HistorypelanggaransiswaController::class, 'index'])->name('historypelanggaransiswa');
+=======
+// Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'store'])->name('historypelanggaran');
+>>>>>>> df2a529e8ba7cc112d0aa55b865966d5c9b8b95c
 Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::class, 'destroy'])->name('delete-historypelanggaran');
 
-//formbimbingan
-Route::get('/formbimbingan',[FormbimbinganController::class, 'index'])->name('formbimbingan');
 
 //Akunsiswa
 Route::get('/akunsiswa',[AkunsiswaController::class, 'index'])->name('akunsiswa');
@@ -177,14 +184,32 @@ Route::get('/daftarsiswa',[DaftarsiswaController::class, 'index'])->name('daftar
 //sanksisiswa
 Route::get('/sanksi-siswa',[SanksiguruController::class, 'index'])->name('sanksi-siswa');
 
-
 //inputpelanggaran
 Route::get('/inputpelanggaran',[InputpelanggaranController::class, 'index'])->name('inputpelanggaran');
-Route::get('/create-pelanggaran',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
+Route::get('/create-pelanggaran/{id}',[InputpelanggaranController::class, 'create'])->name('create-pelanggaran');
 Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])->name('simpan-pelanggaran');
 
-// //profile
+//profile
 Route::get('/profile',[ProfileController::class, 'index'])->name('profile');
+<<<<<<< HEAD
 // Route::get('/setting',[ProfileController::class, 'setting'])->name('setting');
 // Route::patch('/profile/{id}',[ProfileController::class, 'update'])->name('profile.update');
 
+=======
+Route::get('/setting',[ProfileController::class, 'setting'])->name('setting');
+
+//bimbingansiswa
+Route::get('/bimbingansiswa',[BimbingansiswaController::class, 'index'])->name('bimbingansiswa');
+Route::get('/create-bimbingansiswa',[BimbingansiswaController::class, 'create'])->name('create-bimbingansiswa');
+Route::post('/simpan-bimbingansiswa',[BimbingansiswaController::class, 'store'])->name('simpan-bimbingansiswa');
+Route::get('/edit-bimbingansiswa/{id}',[BimbingansiswaController::class, 'edit'])->name('edit-bimbingansiswa');
+Route::post('/update-bimbingansiswa/{id}',[BimbingansiswaController::class, 'update'])->name('update-bimbingansiswa');
+
+
+
+//bimbinganadmin
+Route::get('/bimbinganadmin',[BimbinganadminController::class, 'index'])->name('bimbinganadmin');
+Route::get('/tanggapibimbingan/{id}',[BimbinganadminController::class, 'edit'])->name('tanggapibimbingan');
+Route::post('/update-bimbinganadmin/{id}',[BimbinganadminController::class, 'update'])->name('update-bimbinganadmin');
+Route::get('/delete-bimbinganadmin/{id}',[BimbinganadminController::class, 'destroy'])->name('delete-bimbinganadmin');
+>>>>>>> df2a529e8ba7cc112d0aa55b865966d5c9b8b95c

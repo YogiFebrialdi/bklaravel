@@ -31,7 +31,7 @@
                 <select class="form-control" name="level" arial-label="Default control example">
                     <option selected>{{ $data->level}}</option>
                     <option value="guru">Guru</option>
-                >
+                </select>
             </div>
 
             <div class="form-group">

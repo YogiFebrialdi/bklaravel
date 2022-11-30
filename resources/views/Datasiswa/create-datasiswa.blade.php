@@ -30,7 +30,7 @@
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
             </div>
             <div class="form-group">
-                <select class="form-control" name="kelas" arial-label="Default control example">
+                <select class="form-control" name="kelas_id" arial-label="Default control example">
                     <option selected>Pilih Kelas</option>
                     @foreach ($kelas as $item)
                     <option value="{{ $item->id }}">{{ $item->kelas }}</option>

@@ -26,7 +26,6 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-                    <th scope="col">@sortablelink('nis', 'NIS')</th>
                     <th scope="col">@sortablelink('nama', 'NAMA')</th>
                     <th scope="col">KELAS</th>
                     <th scope="col">Bentuk Pelanggaran</th>
@@ -41,11 +40,10 @@
                 @foreach ($data as $item)
                 <tr>
                     <th scope="item">{{ $no++}}</th>
-                    <td>{{ $item->nis}}</td>
                     <td>{{ $item->nama}}</td>
-                    <td>{{ $item->kelas}}</td>
-                    <td>{{ $item->bentukpelanggaran}}</td>
-                    <td>{{ $item->bobot}}</td>
+                    <td>{{ $item->kelas->kelas}}</td>
+                    <td>{{ $item->benpel->benpel}}</td>
+                    <td>{{ $item->bobot->bobot}}</td>
                     <td>{{ $item->oleh}}</td>
                     <td>{{ $item->tgl}}</td>
                     <td>

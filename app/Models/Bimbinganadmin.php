@@ -7,20 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 
 
-class Kategori extends Model
+class Bimbinganadmin extends Model
 {
     use HasFactory;
     use Sortable;
-
-    protected $table = "kategori";
+    protected $table = "users";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'kategori', 'benpel'];
+        'id','tglbim','name','kelas','bimbingan','tanggapan','keterangan'];
 
-    public $sortable = [
-        'id', 'kategori', 'benpel'
-    ];
-    public function benpel(){
-        return $this->hasMany(Benpel::class);
-    }
+        public $sortable = [
+            'id','tglbim','keterangan'];
 }

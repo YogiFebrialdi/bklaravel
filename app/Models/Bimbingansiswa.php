@@ -6,21 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable;
 
-class Inputpelanggaran extends Model
+class Bimbingansiswa extends Model
 {
     use HasFactory;
     use Sortable;
-
-    protected $table = "datasiswa";
+    protected $table = "users";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'nis', 'nama', 'kelas_id'];
+        'id','tglbim','name','kelas','bimbingan','tanggapan','keterangan'];
 
     public $sortable = [
-        'id', 'nis', 'nama', 'kelas_id'
-        ];
-
-    public function kelas(){
-        return $this->belongsTo(Kelas::class);
-    }
+        'id','tglbim','keterangan'];
 }

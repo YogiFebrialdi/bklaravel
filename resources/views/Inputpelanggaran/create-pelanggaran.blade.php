@@ -24,18 +24,20 @@
            <form action="simpan-pelanggaran" method="post">
             {{ csrf_field () }}
             <div class="form-group">
+<<<<<<< HEAD
                 <input type="text" id="nis" name="nis" class="form-control" placeholder="Nis Siswa">
             </div>
             <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
+=======
+                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa" value="{{ $data->nama}}">
+>>>>>>> df2a529e8ba7cc112d0aa55b865966d5c9b8b95c
             </div>
+            {{-- <div class="form-group">
+                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas}}">
+            </div> --}}
             <div class="form-group">
-                <select class="form-control" name="kelas" arial-label="Default control example">
-                    <option selected>Pilih Kelas</option>
-                    @foreach ($kelas as $item )
-                    <option value="{{ $item->id }}">{{ $item->kelas }}</option>
-                    @endforeach
-                </select>
+                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas->kelas}}">
             </div>
             {{-- <div class="form-group">
                 <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">

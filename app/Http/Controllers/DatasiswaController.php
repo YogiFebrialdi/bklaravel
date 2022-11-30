@@ -25,7 +25,7 @@ class DatasiswaController extends Controller
             ->orWhere('datasiswa.nama', 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('datasiswa');
         }else{
-            $data =  Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
+            $data =  Datasiswa::with('kelas')->sortable()->paginate(5)->fragment('datasiswa');
         }
 
     //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
@@ -92,8 +92,12 @@ class DatasiswaController extends Controller
      */
     public function edit($id)
     {
+        $kelas = Kelas::all();
         $data = Datasiswa::findOrFail($id);
-        return view('Datasiswa.edit-datasiswa', compact('data'));
+        return view('Datasiswa.edit-datasiswa')->with([
+            'data' => $data,
+            'kelas' => $kelas,
+        ]);
     }
 
     /**
