@@ -30,7 +30,7 @@
         <div class="card-header">
             <div class="form-group row">
               <label for="" class="col-sm-2 col-form-label">
-              CARI BIMBINGAN
+              CARI BIMBINGAN SISWA
               </label>
               <div class="col-sm-10">
                 <input type="text" name="cari" id="cari" class="form-control" placeholder="cari data berdasarkan tanggal bimbingan/nama/kelas/keterangan"
