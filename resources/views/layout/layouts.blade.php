@@ -96,11 +96,12 @@
       <span class="brand-text font-weight-light">BKWEB DAMAY</span>
     </div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        </div>
+ <!-- Sidebar -->
+ <div class="sidebar">
+  <!-- Sidebar user panel (optional) -->
+  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+  </div>
+
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -342,12 +343,12 @@
 
                         @if (auth()->user()->level=="siswa")
                         <li class="nav-item">
-                            <a href="datapelanggaran" class="nav-link">
-                              <i class="nav-icon fas fa-chart-pie"></i>
-                              <p>
-                                Data Pelanggaran
-                              </p>
-                            </a>
+                          <a href="historypelanggaransiswa" class="nav-link">
+                            <i class="nav-icon fas fa-chart-pie"></i>
+                            <p>
+                              History Pelanggaran
+                            </p>
+                          </a>
                         </li>
                         @endif
 

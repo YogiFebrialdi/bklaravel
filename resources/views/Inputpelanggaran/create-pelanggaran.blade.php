@@ -24,6 +24,9 @@
            <form action="simpan-pelanggaran" method="post">
             {{ csrf_field () }}
             <div class="form-group">
+                <input type="text" id="nis" name="nis" class="form-control" placeholder="Nis Siswa">
+            </div>
+            <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
             </div>
             <div class="form-group">

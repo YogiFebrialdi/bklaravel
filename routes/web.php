@@ -20,6 +20,7 @@ use App\Http\Controllers\DaftarsiswaController;
 use App\Http\Controllers\SanksisiswaController;
 use App\Http\Controllers\InputpelanggaranController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HistorypelanggaransiswaController;
 
 
 
@@ -145,6 +146,7 @@ Route::get('/delete-benpel/{id}',[BenpelController::class, 'destroy'])->name('de
 
 //historypelanggaran
 Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])->name('historypelanggaran');
+Route::get('/historypelanggaransiswa',[HistorypelanggaransiswaController::class, 'index'])->name('historypelanggaransiswa');
 Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::class, 'destroy'])->name('delete-historypelanggaran');
 
 //formbimbingan
@@ -183,5 +185,6 @@ Route::post('/simpan-pelanggaran',[InputpelanggaranController::class, 'store'])-
 
 // //profile
 Route::get('/profile',[ProfileController::class, 'index'])->name('profile');
-Route::get('/setting',[ProfileController::class, 'setting'])->name('setting');
+// Route::get('/setting',[ProfileController::class, 'setting'])->name('setting');
 // Route::patch('/profile/{id}',[ProfileController::class, 'update'])->name('profile.update');
+
