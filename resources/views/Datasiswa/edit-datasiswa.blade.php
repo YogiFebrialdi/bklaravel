@@ -27,22 +27,27 @@
                 <input type="text" id="nis" name="nis" class="form-control" placeholder="Nis Siswa" value="{{ $data->nis}}">
             </div>
             <div class="form-group">
-                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa" value="{{ $data->nama}}">
+                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa" value="{{ $data->user->name}}">
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email Siswa" value="{{ $data->user->email }}">
             </div>
             <div class="form-group">
                 <select class="form-control" name="kelas_id" arial-label="Default control example">
-                    <option selected>Pilih Kelas</option>
+                    <option value="">Pilih Kelas</option>
                     @foreach ($kelas as $item)
-                    <option value="{{ $item->id }}">{{ $item->kelas }}</option>
+                    <option value="{{ $item->id }}" {{ $data->kelas_id == $item->id ? 'selected' : '' }}>
+                        {{ $item->kelas }}
+                    </option>
                     @endforeach
                 </select>
             </div>
             <div class="form-group">
 
                 <select class="form-control" name="jk" arial-label="Default control example" >
-                    <option selected>{{ $data->jk}}</option>
-                    <option value="Laki-Laki">Laki-Laki</option>
-                    <option value="Perempuan">Perempuan</option>
+                    <option value="">Pilih Jenis Kelamin</option>
+                    <option value="Laki-Laki" {{ $data->jk == "Laki-Laki" ? 'selected' : '' }}>Laki-Laki</option>
+                    <option value="Perempuan" {{ $data->jk == "Perempuan" ? 'selected' : '' }}>Perempuan</option>
                 </select>
             </div>
             <div class="form-group">

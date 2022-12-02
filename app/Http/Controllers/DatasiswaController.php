@@ -118,8 +118,22 @@ class DatasiswaController extends Controller
     */
     public function update(Request $request, $id)
     {
-        $data = Datasiswa::findOrFail($id);
-        $data->update($request->all());
+        User::where("id", $id)->update([
+            "name" => $request->nama,
+            "email" => $request->email,
+            "password" => bcrypt("siswa" . $request->nis)
+        ]);
+
+        Datasiswa::where("id", $id)->update([
+            "nis" => $request->nis,
+            "kelas_id" => $request->kelas_id,
+            "jk" => $request->jk,
+            "ttl" => $request->ttl,
+            "alamat" => $request->alamat,
+            "walimurid" => $request->walimurid,
+            "telepon" => $request->telepon
+        ]);
+
         return redirect()->route('datasiswa')->with('success','Data Berhasil Di Update');
     }
 

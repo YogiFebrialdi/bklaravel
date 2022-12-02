@@ -199,16 +199,16 @@
             @endif
 
 
-            @if (auth()->user()->level=="admin")
+            {{-- @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('akunsiswa') ? 'active' : '' }}" href="akunsiswa">
+                <a class="nav-link {{ Request::is('akunsiswa') ? 'active' : '' }}" href="/akunsiswa">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                  Akun Siswa
                 </p>
                 </a>
             </li>
-            @endif
+            @endif --}}
 
 
             @if (auth()->user()->level=="admin")
