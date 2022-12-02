@@ -22,8 +22,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BimbingansiswaController;
 use App\Http\Controllers\BimbinganadminController;
 use App\Http\Controllers\HistorypelanggaransiswaController;
-use App\Http\Controllers\BimbingansiswaController;
-use App\Http\Controllers\BimbinganadminController;
 
 /*
 |
