@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kelas;
 use App\Models\Datasiswa;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 
@@ -11,10 +12,10 @@ use Illuminate\Http\Request;
 class DatasiswaController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function index(Request $request)
     {
 
@@ -28,19 +29,19 @@ class DatasiswaController extends Controller
             $data =  Datasiswa::with('kelas')->sortable()->paginate(5)->fragment('datasiswa');
         }
 
-    //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
-    //     return view('Datasiswa.datasiswa', compact('data'));
+        //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
+        //     return view('Datasiswa.datasiswa', compact('data'));
         return view('Datasiswa.datasiswa')->with([
             'data' => $data,
             'cari' => $cari,
-            ]);
+        ]);
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
     public function create()
     {
         $kelas = Kelas::all();
@@ -50,46 +51,54 @@ class DatasiswaController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
     public function store(Request $request)
     {
-       //dd(request->all());
-    //    datasiswa::create([
-    //     'nis' => $request->nis,
-    //     'nama' => $request->nama,
-    //     'jk' => $request->jk,
-    //     'ttl' => $request->ttl,
-    //     'alamat' => $request->alamat,
-    //     'walimurid' => $request->walimurid,
-    //     'telepon' => $request->telepon,
-    //    ]);
-    Datasiswa::create($request->all());
-    return redirect()->route('datasiswa')->with('success','Data Berhasil Ditambahkan');
+        $user = new User;
 
-       //return redirect('datasiswa');
+        $user->name = $request->nama;
+        $user->level = "siswa";
+        $user->email = $request->email;
+        $user->password = bcrypt("siswa" . $request->nis);
+        $user->save();
+
+        Datasiswa::create([
+            "nis" => $request->nis,
+            "user_id" => $user->id,
+            "kelas_id" => $request->kelas_id,
+            "jk" => $request->jk,
+            "ttl" => $request->ttl,
+            "alamat" => $request->alamat,
+            "walimurid" => $request->walimurid,
+            "telepon" => $request->telepon
+        ]);
+
+        return redirect()->route('datasiswa')->with('success','Data Berhasil Ditambahkan');
+
+        //return redirect('datasiswa');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Display the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function show($id)
     {
         //
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Show the form for editing the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function edit($id)
     {
         $kelas = Kelas::all();
@@ -101,12 +110,12 @@ class DatasiswaController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function update(Request $request, $id)
     {
         $data = Datasiswa::findOrFail($id);
@@ -115,11 +124,11 @@ class DatasiswaController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function destroy($id)
     {
         $data = Datasiswa::findOrFail($id);
