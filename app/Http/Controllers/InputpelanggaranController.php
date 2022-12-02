@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelas;
+use App\Models\Akunguru;
 use App\Models\Datasiswa;
 use App\Models\Inputpelanggaran;
 use App\Models\Benpel;
+use App\Models\Historypelanggaran;
 use Illuminate\Http\Request;
 
 class InputpelanggaranController extends Controller
@@ -44,13 +46,15 @@ class InputpelanggaranController extends Controller
      */
     public function create($id)
     {
-        $kelas = Kelas::all();
+        // $kelas = Kelas::all();
         $benpel = Benpel::all();
+        $guru = Akunguru::all();
         $data = Datasiswa::findOrFail($id);
         return view('Inputpelanggaran.create-pelanggaran')->with([
             'benpel' => $benpel,
-            'kelas' => $kelas,
+            // 'kelas' => $kelas,
             'data' => $data,
+            'guru' => $guru,
         ]);;
     }
 
@@ -62,6 +66,7 @@ class InputpelanggaranController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
     Historypelanggaran::create($request->all());
     return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
 

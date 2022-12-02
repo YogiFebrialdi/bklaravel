@@ -192,9 +192,6 @@ Route::post('/simpan-bimbingansiswa',[BimbingansiswaController::class, 'store'])
 Route::get('/edit-bimbingansiswa/{id}',[BimbingansiswaController::class, 'edit'])->name('edit-bimbingansiswa');
 Route::post('/update-bimbingansiswa/{id}',[BimbingansiswaController::class, 'update'])->name('update-bimbingansiswa');
 
-
-
-//bimbinganadmin
 Route::get('/bimbinganadmin',[BimbinganadminController::class, 'index'])->name('bimbinganadmin');
 Route::get('/tanggapibimbingan/{id}',[BimbinganadminController::class, 'edit'])->name('tanggapibimbingan');
 Route::post('/update-bimbinganadmin/{id}',[BimbinganadminController::class, 'update'])->name('update-bimbinganadmin');

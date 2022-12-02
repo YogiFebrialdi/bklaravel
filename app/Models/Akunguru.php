@@ -18,5 +18,8 @@ class Akunguru extends Model
 
     public $sortable = [
         'id', 'name'];
-    
+
+        public function historypelanggaran(){
+            return $this->hasMany(Historypelanggaran::class);
+        }
 }

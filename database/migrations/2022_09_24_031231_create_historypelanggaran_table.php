@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('historypelanggaran', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->bigInteger('kelas_id');
+            $table->string('kelas');
             $table->bigInteger('benpel_id');
             $table->bigInteger('bobot_id');
-            $table->string('oleh');
+            $table->bigInteger('level_id');
             $table->date('tgl');
             $table->timestamps();
         });

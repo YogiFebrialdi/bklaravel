@@ -41,10 +41,10 @@
                 <tr>
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->nama}}</td>
-                    <td>{{ $item->kelas->kelas}}</td>
+                    <td>{{ $item->kelas}}</td>
                     <td>{{ $item->benpel->benpel}}</td>
-                    <td>{{ $item->bobot->bobot}}</td>
-                    <td>{{ $item->oleh}}</td>
+                    <td>{{ $item->benpel->bobot}}</td>
+                    <td>{{ $item->akunguru->level}}</td>
                     <td>{{ $item->tgl}}</td>
                     <td>
                         <a href="delete-historypelanggaran/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus History Pelanggaran?');"  class="btn btn-danger">Delete</a>

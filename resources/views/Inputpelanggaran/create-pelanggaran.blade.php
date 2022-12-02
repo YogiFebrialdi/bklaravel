@@ -21,22 +21,16 @@
             </div>
 
         <div class="card-body">
-           <form action="simpan-pelanggaran" method="post">
+           <form action="/simpan-pelanggaran" method="post">
             {{ csrf_field () }}
             <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa" value="{{ $data->nama}}">
             </div>
-            {{-- <div class="form-group">
-                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas}}">
-            </div> --}}
             <div class="form-group">
                 <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas->kelas}}">
             </div>
-            {{-- <div class="form-group">
-                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas">
-            </div> --}}
             <div class="form-group">
-                <select class="form-control" name="benpel" arial-label="Default control example">
+                <select class="form-control" name="benpel_id" arial-label="Default control example">
                     <option selected>Pilih Bentuk Pelanggaran</option>
                     @foreach ($benpel as $item )
                     <option value="{{ $item->id }}">{{ $item->benpel }}</option>
@@ -44,7 +38,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <select class="form-control" name="bobot" arial-label="Default control example">
+                <select class="form-control" name="bobot_id" arial-label="Default control example">
                     <option selected>Pilih Bobot</option>
                     @foreach ($benpel as $item )
                     <option value="{{ $item->id }}">{{ $item->bobot }}</option>
@@ -52,10 +46,18 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="text" id="oleh" name="oleh" class="form-control" placeholder="Oleh">
+                <select class="form-control" name="level_id" arial-label="Default control example">
+                    <option selected>Oleh</option>
+                    @foreach ($guru as $item )
+                    <option value="{{ $item->id }}">{{ $item->level }}</option>
+                    @endforeach
+                </select>
             </div>
+            {{-- <div class="form-group">
+                <input type="text" id="oleh" name="oleh" class="form-control" placeholder="Oleh">
+            </div> --}}
             <div class="form-group">
-                <input type="date" id="ttl" name="ttl" class="form-control">
+                <input type="date" id="tgl" name="tgl" class="form-control">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Simpan Pelanggaran</button>
