@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Profile;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Inputpelanggaran;
+use App\Models\Historypelanggaran;
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class HistorypelanggaransiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,22 +15,8 @@ class ProfileController extends Controller
      */
     public function index(Request $request)
     {
-        $cari = $request->query('cari');
-        if(!empty($cari)){
-            $data = Profile::sortable()
-            ->where('user.name', 'like', '%'. $cari. '%')
-            ->paginate(5)->fragment('profile');
-        }else{
-            $data =  Profile::sortable()->paginate(5)->fragment('profile');
-        }
-
-        return view('Profile.profile')->with([
-            'data' => $data,
-            'cari' => $cari,
-        ]);
-
-        // Profile::where("id", Auth::user()->id)->get();
-        // return view('Profile.profile');
+        $data = Inputpelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
+        return view('Historypelanggaran.historypelanggaransiswa', compact('data'));
     }
 
     /**
@@ -52,8 +37,8 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        Profile::create($request->all());
-    return redirect()->route('profile')->with();
+    //     Inputpelanggaran::create($request->all());
+    // return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
     }
 
     /**
@@ -64,8 +49,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-            $data = Profile::findOrFail($id);
-            return view('Profile.profile', compact('data'));
+        //
     }
 
     /**
@@ -99,6 +83,8 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // $data = Inputpelanggaran::findOrFail($id);
+        // $data->delete();
+        // return back()->with('success','Data Berhasil Di Hapus');;
     }
 }

@@ -24,7 +24,7 @@
            <form action="simpan-akunguru" method="post">
             {{ csrf_field () }}
             <div class="form-group">
-                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Siswa">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Nama Guru">
             </div>
 
             <div class="form-group">
