@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kelas;
 use App\Models\Datasiswa;
 use App\Models\User;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 
@@ -21,16 +22,14 @@ class DatasiswaController extends Controller
 
         $cari = $request->query('cari');
         if(!empty($cari)){
-            $data = Datasiswa::sortable()
-            ->where('datasiswa.nis', 'like', '%'. $cari. '%')
-            ->orWhere('datasiswa.nama', 'like', '%'. $cari. '%')
-            ->paginate(5)->fragment('datasiswa');
+            $data = Datasiswa::join("users", "users.id", "=", "datasiswa.user_id")
+                ->where("nis", "LIKE", "%" . $cari . "%")
+                ->orWhere("name", "LIKE", "%" . $cari . "%")
+                ->paginate(5);
         }else{
             $data =  Datasiswa::with('kelas')->sortable()->paginate(5)->fragment('datasiswa');
         }
 
-        //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');
-        //     return view('Datasiswa.datasiswa', compact('data'));
         return view('Datasiswa.datasiswa')->with([
             'data' => $data,
             'cari' => $cari,

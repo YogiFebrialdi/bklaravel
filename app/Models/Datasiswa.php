@@ -18,7 +18,7 @@ class Datasiswa extends Model
         'id', 'nis', 'user_id', 'kelas_id', 'jk', 'ttl', 'alamat', 'walimurid', 'telepon'];
 
     public $sortable = [
-        'id', 'nis', 'nama'
+        'id'
     ];
 
     public function kelas(){

@@ -24,9 +24,9 @@ class InputpelanggaranController extends Controller
 
         $cari = $request->query('cari');
         if(!empty($cari)){
-            $data = Inputpelanggaran::sortable()
-            ->where('datasiswa.nis', 'like', '%'. $cari. '%')
-            ->orWhere('datasiswa.nama', 'like', '%'. $cari. '%')
+            $data = Inputpelanggaran::join("users", "users.id", "=", "datasiswa.user_id")
+            ->where("nis", 'LIKE', '%'. $cari. '%')
+            ->orWhere("name", 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('inputpelanggaran');
         }else{
             $data =  Inputpelanggaran::with('kelas')->sortable()->paginate(5)->fragment('inputpelanggaran');

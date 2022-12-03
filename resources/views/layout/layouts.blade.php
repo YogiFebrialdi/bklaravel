@@ -224,7 +224,7 @@
 
             @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('bimbinganadmin') ? 'active' : '' }}" href="bimbinganadmin">
+                <a class="nav-link {{ Request::is('bimbinganadmin') ? 'active' : '' }}" href="{{ url('/bimbinganadmin') }}">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                      Data Bimbingan

@@ -5,9 +5,6 @@ use App\Http\Controllers\DatasiswaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SanksiController;
-// use App\Http\Controllers\AdminController;
-// use App\Http\Controllers\GuruController;
-// use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BenpelController;
 use App\Http\Controllers\HistorypelanggaranController;
@@ -32,6 +29,7 @@ use App\Http\Controllers\HistorypelanggaransiswaController;
 */
 
 Route::group(["middleware" => ["guest"]], function() {
+    Route::get("/", [LoginController::class, "halamanlogin"]);
     Route::get('/login',[LoginController::class, 'halamanlogin'])->name('login');
     Route::post('/postlogin',[LoginController::class, 'postlogin'])->name('postlogin');
 });
@@ -146,10 +144,7 @@ Route::group(["middleware" => ["autentikasi"]], function() {
     Route::get('/setting',[ProfileController::class, 'setting'])->name('setting');
     //bimbingansiswa
     Route::get('/bimbingansiswa',[BimbingansiswaController::class, 'index'])->name('bimbingansiswa');
-    Route::get('/create-bimbingansiswa',[BimbingansiswaController::class, 'create'])->name('create-bimbingansiswa');
-    Route::post('/simpan-bimbingansiswa',[BimbingansiswaController::class, 'store'])->name('simpan-bimbingansiswa');
-    Route::get('/edit-bimbingansiswa/{id}',[BimbingansiswaController::class, 'edit'])->name('edit-bimbingansiswa');
-    Route::post('/update-bimbingansiswa/{id}',[BimbingansiswaController::class, 'update'])->name('update-bimbingansiswa');
+    Route::post("/bimbingansiswa", [BimbingansiswaController::class, "store"]);
 
     Route::get('/bimbinganadmin',[BimbinganadminController::class, 'index'])->name('bimbinganadmin');
     Route::get('/tanggapibimbingan/{id}',[BimbinganadminController::class, 'edit'])->name('tanggapibimbingan');
