@@ -23,4 +23,9 @@ class Inputpelanggaran extends Model
     public function kelas(){
         return $this->belongsTo(Kelas::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo("App\Models\User", "user_id", "id");
+    }
 }

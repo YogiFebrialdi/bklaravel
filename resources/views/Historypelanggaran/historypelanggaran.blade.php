@@ -1,3 +1,7 @@
+@php
+    use App\Models\Historypelanggaran;
+@endphp
+
 @extends('layout.layouts')
 
 @section('content')
@@ -31,23 +35,30 @@
                     <th scope="col">Bentuk Pelanggaran</th>
                     <th scope="col">Bobot</th>
                     <th scope="col">Oleh</th>
-                    <th scope="col">Tanggal Pelanggaran</th>
+                    <th scope="col" class="text-center">Tanggal Pelanggaran</th>
                     <th scope="col">Aksi</th>
                 </tr>
                 @php
                   $no = 1 + (($data->currentPage()-1) * $data->perPage());
                 @endphp
                 @foreach ($data as $item)
+                    @php
+                        $cek = Historypelanggaran::where("id", $item->id)->where("guru_id", Auth::user()->id)->first();
+                    @endphp
                 <tr>
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->nama}}</td>
                     <td>{{ $item->kelas}}</td>
                     <td>{{ $item->benpel->benpel}}</td>
                     <td>{{ $item->benpel->bobot}}</td>
-                    <td>{{ $item->akunguru->level}}</td>
-                    <td>{{ $item->tgl}}</td>
-                    <td>
+                    <td>{{ $item->user->name}}</td>
+                    <td class="text-center">{{ $item->tgl}}</td>
+                    <td class="text-center">
+                        @if ($cek)
                         <a href="delete-historypelanggaran/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus History Pelanggaran?');"  class="btn btn-danger">Delete</a>
+                        @else
+                        -
+                        @endif
                     </td>
                 </tr>
                 @endforeach

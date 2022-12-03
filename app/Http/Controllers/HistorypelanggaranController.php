@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Inputpelanggaran;
 use App\Models\Historypelanggaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HistorypelanggaranController extends Controller
 {
@@ -16,6 +17,7 @@ class HistorypelanggaranController extends Controller
     public function index(Request $request)
     {
         $data = Historypelanggaran::with( 'benpel', 'akunguru')->sortable()->paginate(5)->fragment('historypelanggaran');
+
         return view('Historypelanggaran.historypelanggaran', compact('data'));
     }
 

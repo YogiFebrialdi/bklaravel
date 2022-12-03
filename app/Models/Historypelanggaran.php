@@ -14,7 +14,7 @@ class Historypelanggaran extends Model
     protected $table = "historypelanggaran";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id', 'nama', 'kelas', 'benpel_id', 'bobot_id', 'level_id', 'tgl'];
+        'id', 'nama', 'kelas', 'benpel_id', 'guru_id', 'tgl'];
 
     public $sortable = [
         'id', 'nama', 'kelas', 'benpel_id', 'bobot_id', 'level_id', 'tgl'
@@ -30,5 +30,10 @@ class Historypelanggaran extends Model
 
     public function akunguru(){
         return $this->belongsTo(Akunguru::class, 'level_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo("App\Models\User", "guru_id", "id");
     }
 }

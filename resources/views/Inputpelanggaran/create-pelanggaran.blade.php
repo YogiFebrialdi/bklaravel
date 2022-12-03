@@ -24,35 +24,16 @@
            <form action="/simpan-pelanggaran" method="post">
             {{ csrf_field () }}
             <div class="form-group">
-                <input type="text" id="nis" name="nis" class="form-control" placeholder="Nis Siswa">
+                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa" value="{{ $data->user->name }}" readonly>
             </div>
             <div class="form-group">
-                <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
-            </div>
-            <div class="form-group">
-                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas->kelas}}">
+                <input type="text" id="kelas" name="kelas" class="form-control" placeholder="Kelas" value="{{ $data->kelas->kelas}}" readonly>
             </div>
             <div class="form-group">
                 <select class="form-control" name="benpel_id" arial-label="Default control example">
                     <option selected>Pilih Bentuk Pelanggaran</option>
                     @foreach ($benpel as $item )
                     <option value="{{ $item->id }}">{{ $item->benpel }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <select class="form-control" name="bobot_id" arial-label="Default control example">
-                    <option selected>Pilih Bobot</option>
-                    @foreach ($benpel as $item )
-                    <option value="{{ $item->id }}">{{ $item->bobot }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <select class="form-control" name="level_id" arial-label="Default control example">
-                    <option selected>Oleh</option>
-                    @foreach ($guru as $item )
-                    <option value="{{ $item->id }}">{{ $item->level }}</option>
                     @endforeach
                 </select>
             </div>

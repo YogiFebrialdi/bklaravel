@@ -60,7 +60,7 @@
                 <tr>
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->nis}}</td>
-                    <td>{{ $item->nama}}</td>
+                    <td>{{ $item->user->name}}</td>
                     <td>{{ $item->kelas->kelas}}</td>
                     {{-- <td>{{ $item->jk}}</td>
                     <td>{{date('d-m-Y', strtotime($item->ttl)) }}</td>

@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('kelas');
             $table->bigInteger('benpel_id');
-            $table->bigInteger('bobot_id');
-            $table->bigInteger('level_id');
+            $table->bigInteger('guru_id');
             $table->date('tgl');
             $table->timestamps();
         });
