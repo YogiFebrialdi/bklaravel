@@ -23,6 +23,7 @@
         <div class="card-body">
            <form action="/simpan-pelanggaran" method="post">
             {{ csrf_field () }}
+            <input type="hidden" name="nis" value="{{ $data->nis }}">
             <div class="form-group">
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa" value="{{ $data->user->name }}" readonly>
             </div>

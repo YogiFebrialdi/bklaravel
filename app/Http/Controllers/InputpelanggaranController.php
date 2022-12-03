@@ -69,15 +69,17 @@ class InputpelanggaranController extends Controller
     {
         $benpel = Benpel::where("id", $request->benpel_id)->first();
 
+        $siswa = Datasiswa::where("nis", $request->nis)->first();
+
         Historypelanggaran::create([
-            "nama" => $request->nama,
+            "siswa_id" => $siswa->id,
             "kelas" => $request->kelas,
             "benpel_id" => $request->benpel_id,
             "guru_id" => Auth::user()->id,
             "tgl" => $request->tgl
         ]);
 
-        return redirect()->route('historypelanggaran')->with('success','Data Berhasil Ditambahkan');
+        return redirect("/historypelanggaran")->with('success','Data Berhasil Ditambahkan');
 
         //return redirect('datasiswa');
     }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('historypelanggaran', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string("siswa_id");
             $table->string('kelas');
             $table->bigInteger('benpel_id');
             $table->bigInteger('guru_id');

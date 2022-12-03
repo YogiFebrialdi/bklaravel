@@ -16,7 +16,8 @@ class HistorypelanggaranController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Historypelanggaran::with( 'benpel', 'akunguru')->sortable()->paginate(5)->fragment('historypelanggaran');
+        $data = Historypelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
+
 
         return view('Historypelanggaran.historypelanggaran', compact('data'));
     }

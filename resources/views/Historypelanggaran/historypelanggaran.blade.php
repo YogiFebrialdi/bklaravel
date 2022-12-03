@@ -47,7 +47,7 @@
                     @endphp
                 <tr>
                     <th scope="item">{{ $no++}}</th>
-                    <td>{{ $item->nama}}</td>
+                    <td>{{ $item->siswa->user->name}}</td>
                     <td>{{ $item->kelas}}</td>
                     <td>{{ $item->benpel->benpel}}</td>
                     <td>{{ $item->benpel->bobot}}</td>

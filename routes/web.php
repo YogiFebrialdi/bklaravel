@@ -64,6 +64,8 @@ Route::group(["middleware" => ["autentikasi"]], function() {
     Route::get("/delete-datasiswa/{user_id}", [DatasiswaController::class, "destroy"]);
     // Route::get('/delete-datasiswa/{user_id}',[DatasiswaController::class, 'destroy'])->name('delete-datasiswa');
 
+    Route::get("/historypelanggaransiswa", [HistorypelanggaransiswaController::class, "index"]);
+
     //kelas
     Route::get('/kelas',[KelasController::class, 'index'])->name('kelas');
     Route::get('/create-kelas',[KelasController::class, 'create'])->name('create-kelas');
@@ -98,7 +100,7 @@ Route::group(["middleware" => ["autentikasi"]], function() {
     Route::get('/delete-benpel/{id}',[BenpelController::class, 'destroy'])->name('delete-benpel');
 
     //historypelanggaran
-    Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index'])->name('historypelanggaran');
+    Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index']);
     // Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'store'])->name('historypelanggaran');
     Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::class, 'destroy'])->name('delete-historypelanggaran');
 
