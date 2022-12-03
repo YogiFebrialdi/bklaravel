@@ -143,9 +143,12 @@ class DatasiswaController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function destroy($id)
+    public function destroy($user_id)
     {
-        $data = Datasiswa::findOrFail($id);
+        $data = Datasiswa::where("user_id", $user_id)->first();
+
+        User::where("id", $user_id)->delete();
+
         $data->delete();
         return back()->with('success','Data Berhasil Di Hapus');;
     }
