@@ -30,6 +30,9 @@
                 <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Siswa">
             </div>
             <div class="form-group">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email Siswa">
+            </div>
+            <div class="form-group">
                 <select class="form-control" name="kelas_id" arial-label="Default control example">
                     <option selected>Pilih Kelas</option>
                     @foreach ($kelas as $item)

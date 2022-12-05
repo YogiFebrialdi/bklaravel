@@ -15,7 +15,7 @@ class AkunguruController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         $cari = $request->query('cari');
         $guru = Akunguru::where('level', 'guru')->get();
         if(!empty($cari)){
@@ -56,9 +56,9 @@ class AkunguruController extends Controller
     {
         Akunguru::create([
             'name' => $request->name,
-            'level' => $request->level,
+            'level' => "guru",
             'email' => $request->email,
-            'password' => Hash::make ($request->password),
+            'password' => bcrypt($request->password),
         ]);
         return redirect()->route('akunguru')->with('success','Data Berhasil Ditambahkan');
     }

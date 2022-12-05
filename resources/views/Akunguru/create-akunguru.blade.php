@@ -28,13 +28,6 @@
             </div>
 
             <div class="form-group">
-                <select class="form-control" name="level" arial-label="Default control example">
-                    <option selected>Level</option>
-                    <option value="guru">guru</option>
-                </select>
-            </div>
-
-            <div class="form-group">
                 <input type="text" id="email" name="email" class="form-control" placeholder="Email">
             </div>
 

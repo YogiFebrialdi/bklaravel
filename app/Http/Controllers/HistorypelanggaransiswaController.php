@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Datasiswa;
 use App\Models\Inputpelanggaran;
 use App\Models\Historypelanggaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HistorypelanggaransiswaController extends Controller
 {
@@ -15,7 +17,10 @@ class HistorypelanggaransiswaController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Inputpelanggaran::sortable()->paginate(5)->fragment('historypelanggaran');
+        $siswa = Datasiswa::where("user_id", Auth::user()->id)->first();
+
+        $data = Historypelanggaran::where("siswa_id", $siswa->id)->paginate(5);
+
         return view('Historypelanggaran.historypelanggaransiswa', compact('data'));
     }
 

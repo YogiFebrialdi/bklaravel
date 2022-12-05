@@ -22,7 +22,7 @@ class ProfileController extends Controller
             ->where('user.name', 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('profile');
         }else{
-            $data =  Profile::sortable()->paginate(5)->fragment('profile');
+            $data =  Profile::get();
         }
 
         return view('Profile.profile')->with([
@@ -53,7 +53,7 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         Profile::create($request->all());
-    return redirect()->route('profile')->with();
+        return redirect()->route('profile')->with();
     }
 
     /**

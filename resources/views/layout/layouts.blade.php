@@ -199,16 +199,16 @@
             @endif
 
 
-            @if (auth()->user()->level=="admin")
+            {{-- @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('akunsiswa') ? 'active' : '' }}" href="akunsiswa">
+                <a class="nav-link {{ Request::is('akunsiswa') ? 'active' : '' }}" href="/akunsiswa">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                  Akun Siswa
                 </p>
                 </a>
             </li>
-            @endif
+            @endif --}}
 
 
             @if (auth()->user()->level=="admin")
@@ -224,7 +224,7 @@
 
             @if (auth()->user()->level=="admin")
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('bimbinganadmin') ? 'active' : '' }}" href="bimbinganadmin">
+                <a class="nav-link {{ Request::is('bimbinganadmin') ? 'active' : '' }}" href="{{ url('/bimbinganadmin') }}">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                      Data Bimbingan
@@ -351,21 +351,12 @@
 
                         @if (auth()->user()->level=="siswa")
                         <li class="nav-item">
-<<<<<<< HEAD
                           <a href="historypelanggaransiswa" class="nav-link">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>
                               History Pelanggaran
                             </p>
                           </a>
-=======
-                            <a class="nav-link {{ Request::is('datapelanggaran') ? 'active' : '' }}" href="datapelanggaran">
-                              <i class="nav-icon fas fa-chart-pie"></i>
-                              <p>
-                                Data Pelanggaran
-                              </p>
-                            </a>
->>>>>>> df2a529e8ba7cc112d0aa55b865966d5c9b8b95c
                         </li>
                         @endif
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Benpel;
 use App\Models\Datasiswa;
+use App\Models\Historypelanggaran;
 use App\Models\Kelas;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class KelasController extends Controller
@@ -15,7 +18,6 @@ class KelasController extends Controller
      */
     public function index(Request $request)
     {
-
         $cari = $request->query('cari');
         if(!empty($cari)){
             $data = Kelas::sortable()
@@ -25,8 +27,6 @@ class KelasController extends Controller
             $data =  Kelas::sortable()->paginate(14)->fragment('kelas');
         }
 
-    //    $data = Kelas::sortable()->paginate(5)->fragment('kelas');
-    //     return view('Kelas.kelas', compact('data'));
         return view('Kelas.kelas')->with([
             'data' => $data,
             'cari' => $cari,

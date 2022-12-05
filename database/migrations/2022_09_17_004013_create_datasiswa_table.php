@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('datasiswa', function (Blueprint $table) {
             $table->id();
             $table->integer('nis')->unique();
-            $table->string('nama')->nullable();
-            $table->string('kelas')->nullable();
+            $table->integer("user_id");
+            $table->integer('kelas_id')->nullable();
             $table->enum('jk', ['Laki-Laki', 'Perempuan'])->nullable();
             $table->date('ttl')->nullable();
             $table->string('alamat')->nullable();
