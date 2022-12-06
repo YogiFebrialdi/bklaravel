@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('kelas');
             $table->bigInteger('benpel_id');
             $table->bigInteger('guru_id');
+            $table->integer("bobot");
             $table->date('tgl');
             $table->timestamps();
         });

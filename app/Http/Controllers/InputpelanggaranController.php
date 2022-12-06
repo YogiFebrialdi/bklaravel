@@ -20,8 +20,6 @@ class InputpelanggaranController extends Controller
     */
     public function index(Request $request)
     {
-
-
         $cari = $request->query('cari');
         if(!empty($cari)){
             $data = Inputpelanggaran::join("users", "users.id", "=", "datasiswa.user_id")
@@ -76,7 +74,8 @@ class InputpelanggaranController extends Controller
             "kelas" => $request->kelas,
             "benpel_id" => $request->benpel_id,
             "guru_id" => Auth::user()->id,
-            "tgl" => $request->tgl
+            "tgl" => $request->tgl,
+            "bobot" => $benpel->bobot
         ]);
 
         return redirect("/historypelanggaran")->with('success','Data Berhasil Ditambahkan');
