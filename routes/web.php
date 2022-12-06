@@ -35,9 +35,6 @@ Route::group(["middleware" => ["guest"]], function() {
 });
 
 Route::group(["middleware" => ["autentikasi"]], function() {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    });
 
     //dashboard
     Route::get('/dashboard',[DashboardController::class, 'index'])->name ('dashboard');

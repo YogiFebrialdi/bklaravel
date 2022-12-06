@@ -80,7 +80,7 @@
       </li>
       @endif
       <li class="nav-item">
-        <a class="nav-link" data-widget="log-out" href="logout" role="button">
+        <a class="nav-link" data-widget="log-out" href="/logout" role="button">
             <i class='fas fa-sign-out-alt'></i>
         </a>
       </li>
