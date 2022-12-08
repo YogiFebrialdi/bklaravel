@@ -17,7 +17,7 @@ class Inputpelanggaran extends Model
         'id', 'nis', 'nama', 'kelas_id'];
 
     public $sortable = [
-        'id', 'nis', 'nama', 'kelas_id'
+        'id', 'nis', 'user_id', 'kelas_id'
         ];
 
     public function kelas(){

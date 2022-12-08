@@ -90,7 +90,7 @@ use App\Models\Historypelanggaran;
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                Top 4 Pelanggaran Siswa
+                                Top 8 Pelanggaran Siswa
                             </h3>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ use App\Models\Historypelanggaran;
                     @endphp
                 <div class="col-md-3">
                     <div class="card">
-                        <div class="card-body" style="background-color: white; color: black;">
+                        <div class="card-body">
                             <h6 class="text-center">
                                 {{ $history->siswa->user->name }}
                                 <br><br>
@@ -116,9 +116,9 @@ use App\Models\Historypelanggaran;
                                 {{ $data->total }}
                             </span>
                             <hr>
-                            <button class="btn btn-info btn-block">
-                                Lihat Pelanggaran
-                            </button>
+                            {{-- <button class="btn btn-info btn-block">
+                                <a href="historypelanggaransiswa" class="btn btn-info">Lihat Pelanggaran</a>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -130,112 +130,6 @@ use App\Models\Historypelanggaran;
                 </div>
                 @endforelse
             </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Monthly Recap Report</h5>
-
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                                        <i class="fas fa-wrench"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                        <a href="#" class="dropdown-item">Action</a>
-                                        <a href="#" class="dropdown-item">Another action</a>
-                                        <a href="#" class="dropdown-item">Something else here</a>
-                                        <a class="dropdown-divider"></a>
-                                        <a href="#" class="dropdown-item">Separated link</a>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <p class="text-center">
-                                        <strong>Sales: 1 Sep, 2022 - 30 Des, 2022</strong>
-                                    </p>
-
-                                    <div class="chart">
-                                        <!-- Sales Chart Canvas -->
-                                        <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                                    </div>
-                                    <!-- /.chart-responsive -->
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-md-4">
-                                    <p class="text-center">
-                                        <strong>Goal Completion</strong>
-                                    </p>
-
-                                    <div class="progress-group">
-                                        Add Products to Cart
-                                        <span class="float-right"><b>160</b>/200</span>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-primary" style="width: 80%"></div>
-                                        </div>
-                                    </div>
-                                    <!-- /.progress-group -->
-
-                                    <div class="progress-group">
-                                        Complete Purchase
-                                        <span class="float-right"><b>310</b>/400</span>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-danger" style="width: 75%"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- /.progress-group -->
-                                    <div class="progress-group">
-                                        <span class="progress-text">Visit Premium Page</span>
-                                        <span class="float-right"><b>480</b>/800</span>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-success" style="width: 60%"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- /.progress-group -->
-                                    <div class="progress-group">
-                                        Send Inquiries
-                                        <span class="float-right"><b>250</b>/500</span>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-warning" style="width: 50%"></div>
-                                        </div>
-                                    </div>
-                                    <!-- /.progress-group -->
-                                </div>
-                                <!-- /.col -->
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- ./card-body -->
-                        <!-- /.col -->
-                        <!-- /.description-block -->
-                    </div>
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.card-footer -->
-        </div>
-        <!-- /.card -->
-    </div>
-    <!-- /.col -->
-</div>
-<!-- /.row -->
-
-<!-- /.table-responsive -->
-
-
 <!-- /.card-body -->
 <!-- /.card-footer -->
 </div>

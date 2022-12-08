@@ -65,13 +65,6 @@
         </a>
       </li>
 
-      @if (auth()->user()->level=="guru")
-      <li class="nav-item">
-        <a class="nav-link" data-widget="profile" href="profile" role="button">
-            <i class="nav-icon fas fa-user"></i>
-        </a>
-      </li>
-      @endif
       @if (auth()->user()->level=="siswa")
       <li class="nav-item">
         <a class="nav-link" data-widget="profile" href="profile" role="button">
@@ -299,7 +292,7 @@
 
                         @if (auth()->user()->level=="guru")
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('historypelanggaran') ? 'active' : '' }}" href="historypelanggaran">
+                            <a class="nav-link {{ Request::is('historypelanggaranguru') ? 'active' : '' }}" href="historypelanggaranguru">
                               <i class="nav-icon fas fa-chart-pie"></i>
                               <p>
                                 History Pelanggaran

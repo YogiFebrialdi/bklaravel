@@ -32,7 +32,7 @@
             <table class="table table-bordered">
                 <tr>
                     <th scope="col">NO</th>
-                    <th scope="col">@sortablelink('kategori', 'KATEGORI')</th>
+                    <th scope="col">@sortablelink('kategori_id', 'KATEGORI')</th>
                     <th scope="col">BENTUK PELANGGARAN</th>
                     <th scope="col">BOBOT</th>
                     <th scope="col">Aksi</th>

@@ -17,7 +17,7 @@ class Historypelanggaran extends Model
         'id', 'siswa_id', 'kelas', 'benpel_id', 'guru_id', 'tgl', 'bobot'];
 
     public $sortable = [
-        'id', 'nama', 'kelas', 'benpel_id', 'bobot_id', 'level_id', 'tgl'
+        'id', 'siswa_id', 'kelas', 'benpel_id', 'guru_id', 'tgl', 'bobot'
     ];
 
     // public function kelas(){

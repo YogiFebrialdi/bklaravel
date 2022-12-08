@@ -23,7 +23,7 @@ class AkunguruController extends Controller
             ->where('users.name', 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('akunguru');
         }else{
-            $data =  Akunguru::sortable()->paginate(5)->fragment('akunguru');
+            $data =  Akunguru::sortable()->paginate(10)->fragment('akunguru');
         }
 
             //    $data = Akunguru::sortable()->paginate(5)->fragment('akunguru');

@@ -42,7 +42,7 @@
                     <tr>
                         <th scope="col">NO</th>
                         <th scope="col">@sortablelink('nis', 'NIS')</th>
-                        <th scope="col">@sortablelink('nama', 'NAMA')</th>
+                        <th scope="col">NAMA</th>
                         <th scope="col">Kelas</th>
                         <th scope="col">Aksi</th>
                     </tr>

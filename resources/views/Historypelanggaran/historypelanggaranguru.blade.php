@@ -36,7 +36,7 @@
                     <th scope="col">Bobot</th>
                     <th scope="col">Oleh</th>
                     <th scope="col" class="text-center">Tanggal Pelanggaran</th>
-
+                    <th scope="col">Aksi</th>
                 </tr>
                 @php
                   $no = 1 + (($data->currentPage()-1) * $data->perPage());
@@ -53,6 +53,13 @@
                     <td>{{ $item->benpel->bobot}}</td>
                     <td>{{ $item->user->name}}</td>
                     <td class="text-center">{{ $item->tgl}}</td>
+                    <td class="text-center">
+                        @if ($cek)
+                        <a href="delete-historypelanggaran/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus History Pelanggaran?');"  class="btn btn-danger">Delete</a>
+                        @else
+                        -
+                        @endif
+                    </td>
                 </tr>
                 @endforeach
             </table>

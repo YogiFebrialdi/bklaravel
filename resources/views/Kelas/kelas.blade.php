@@ -52,8 +52,8 @@
                         <th scope="col">NO</th>
                         <th scope="col">@sortablelink('kelas', 'KELAS')</th>
                         <th scope="col" class="text-center">SISWA</th>
-                        <th scope="col" class="text-center">Pelanggaran</th>
-                        <th scope="col" class="text-center">Poin</th>
+                        <th scope="col" class="text-center">@sortablelink('pelanggaran', 'PELANGGARAN')</th>
+                        <th scope="col" class="text-center">@sortablelink('poin', 'POIN')</th>
                         <th scope="col">Aksi</th>
                     </tr>
                     @php

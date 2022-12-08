@@ -19,7 +19,7 @@ class HistorypelanggaransiswaController extends Controller
     {
         $siswa = Datasiswa::where("user_id", Auth::user()->id)->first();
 
-        $data = Historypelanggaran::where("siswa_id", $siswa->id)->paginate(5);
+        $data = Historypelanggaran::where("siswa_id", $siswa->id)->paginate(10);
 
         return view('Historypelanggaran.historypelanggaransiswa', compact('data'));
     }

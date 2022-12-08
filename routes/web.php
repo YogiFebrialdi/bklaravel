@@ -19,6 +19,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BimbingansiswaController;
 use App\Http\Controllers\BimbinganadminController;
 use App\Http\Controllers\HistorypelanggaransiswaController;
+use App\Http\Controllers\HistorypelanggaranguruController;
 
 /*
 |
@@ -98,6 +99,8 @@ Route::group(["middleware" => ["autentikasi"]], function() {
     Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'index']);
     // Route::get('/historypelanggaran',[HistorypelanggaranController::class, 'store'])->name('historypelanggaran');
     Route::get('/delete-historypelanggaran/{id}',[HistorypelanggaranController::class, 'destroy'])->name('delete-historypelanggaran');
+
+    Route::get('/historypelanggaranguru',[HistorypelanggaranguruController::class, 'index']);
 
 
     //Akunsiswa

@@ -27,7 +27,7 @@ class DatasiswaController extends Controller
                 ->orWhere("name", "LIKE", "%" . $cari . "%")
                 ->paginate(5);
         }else{
-            $data =  Datasiswa::with('kelas')->sortable()->paginate(5)->fragment('datasiswa');
+            $data =  Datasiswa::with('kelas')->sortable()->paginate(10)->fragment('datasiswa');
         }
 
         return view('Datasiswa.datasiswa')->with([

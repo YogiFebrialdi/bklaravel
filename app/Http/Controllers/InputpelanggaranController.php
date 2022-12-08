@@ -27,7 +27,7 @@ class InputpelanggaranController extends Controller
             ->orWhere("name", 'like', '%'. $cari. '%')
             ->paginate(5)->fragment('inputpelanggaran');
         }else{
-            $data =  Inputpelanggaran::with('kelas')->sortable()->paginate(5)->fragment('inputpelanggaran');
+            $data =  Inputpelanggaran::with('kelas')->sortable()->paginate(10)->fragment('inputpelanggaran');
         }
 
         //    $data = Datasiswa::sortable()->paginate(5)->fragment('datasiswa');

@@ -33,7 +33,6 @@
                 <tr>
                     <th scope="col">NO</th>
                     <th scope="col">KATEGORI PELANGGARAN</th>
-                    <th scope="col">BENTUK PELANGGARAN</th>
                     <th scope="col">Aksi</th>
                 </tr>
                 @php
@@ -43,7 +42,6 @@
                 <tr>
                     <th scope="item">{{ $no++}}</th>
                     <td>{{ $item->kategori}}</td>
-                    <td>{{ $item->benpel}}</td>
                     <td>
                         <a href="edit-kategori/{{$item->id}}" class="btn btn-info">Edit</a>
                         <a href="delete-kategori/{{$item->id}}" onclick="return confirm('Apakah Anda Yakin Menghapus Kategori?');"  class="btn btn-danger">Delete</a>

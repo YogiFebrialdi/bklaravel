@@ -7,7 +7,7 @@ use App\Models\Historypelanggaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class HistorypelanggaranController extends Controller
+class HistorypelanggaranguruController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,10 @@ class HistorypelanggaranController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Historypelanggaran::sortable()->paginate(10)->fragment('historypelanggaran');
+        $data = Historypelanggaran::sortable()->paginate(10)->fragment('historypelanggaranguru');
 
 
-        return view('Historypelanggaran.historypelanggaran', compact('data'));
+        return view('Historypelanggaran.historypelanggaranguru', compact('data'));
     }
 
     /**

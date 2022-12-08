@@ -24,8 +24,8 @@
                 <table class="table table-bordered">
                     <tr>
                         <th scope="col">NO</th>
-                        <th scope="col">@sortablelink('nis', 'NIS')</th>
-                        <th scope="col">@sortablelink('nama', 'NAMA')</th>
+                        <th scope="col">NIS</th>
+                        <th scope="col">NAMA</th>
                         <th scope="col">KELAS</th>
                         <th scope="col">Bentuk Pelanggaran</th>
                         <th scope="col" class="text-center">Bobot</th>

@@ -18,7 +18,7 @@ class Kelas extends Model
         'id', 'kelas', 'siswa', 'pelanggaran', 'poin'];
 
     public $sortable = [
-        'id', 'kelas'];
+        'id', 'kelas', 'siswa', 'pelanggaran', 'poin'];
 
     public function datasiswa(){
         return $this->hasMany(Datasiswa::class);
